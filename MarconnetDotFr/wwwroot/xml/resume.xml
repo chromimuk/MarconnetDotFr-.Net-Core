@@ -1,0 +1,89 @@
+<resume>
+
+  <experiences>
+
+    <exp>
+      <image>/img/company-msc.png</image>
+      <title>MSC</title>
+      <location>Geneva, Switzerland</location>
+      <description>
+        Software engineer at MSC (Mediterranean Shipping Company), an international shipping company.
+      </description>
+      <tech>
+        C#, .NET MVC, SQL Server, Javascript (with Typescript), VSTS
+      </tech>
+    </exp>
+
+    <exp>
+      <image>/img/company-dialoginsight.png</image>
+      <title>Dialog Insight</title>
+      <location>Québec, Canada</location>
+      <description>
+        Software engineer at Dialog Insight, Internet marketing service.
+      </description>
+      <tech>
+        C#/.NET, SQL Server, Javascript, TFS
+      </tech>
+    </exp>
+
+    <exp>
+      <image>/img/company-tdk.png</image>
+      <title>TDK-EPCOS</title>
+      <location>New Jersey, US</location>
+      <description>
+        One year internship whose goal was to improve and create new functionalities for the web portal of the company.
+      </description>
+      <tech>
+        C#/.NET, SQL Server, Javascript, Bitbucket, Jira
+      </tech>
+    </exp>
+
+    <exp>
+      <image>/img/company-novartis.png</image>
+      <title>Novartis</title>
+      <location>Basel, Switzerland</location>
+      <description>
+        Internship in which my mission was to work on adding features to the internal website of the Knowledge Management department.
+      </description>
+      <tech>
+        PHP (CakePHP), Javascript
+      </tech>
+    </exp>
+
+    <exp>
+      <image>/img/company-universityofportsmouth.png</image>
+      <title>University of Portsmouth</title>
+      <description>
+        Internship where I had the opportunity to work on a program managing and processing DNA data.
+      </description>
+      <tech>
+        Perl
+      </tech>
+    </exp>
+  </experiences>
+
+  <education>
+
+    <edu>
+      <image>/img/uni-utbm.png</image>
+      <title>French Master's Degree</title>
+      <short-title>Master's Degree</short-title>
+      <location>Université de Technologie de Belfort-Montbéliard (Belfort, France)</location>
+      <short-location>UTBM (France)</short-location>
+      <description>
+        Software Engineering specialisation, with a focus on the management and the conception of projects, and the knowledge of databases.
+      </description>
+    </edu>
+
+    <edu>
+      <image>/img/uni-iutbm.png</image>
+      <title><![CDATA[ <i>DUT Informatique</i> ]]></title>
+      <short-title>DUT Informatique</short-title>
+      <location>Institut Universitaire de Technologie de Belfort-Montbéliard (Belfort, France)</location>
+      <short-location>IUT-BM (France)</short-location>
+      <description>
+        University diploma of technology in Computer Science, where I got a broad view of what the IT field is made of: conception, algorithms, implementation (low-level to object-oriented), web development, etc.
+      </description>
+    </edu>
+  </education>
+</resume>

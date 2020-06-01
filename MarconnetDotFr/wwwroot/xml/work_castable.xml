@@ -1,0 +1,32 @@
+<work>
+
+	<cover>
+		<title>Castable</title>
+		<subtitle>Python/Javascript</subtitle>
+		<period>(2018)</period>
+		<image>/img/work/castable/front.jpg</image>
+		<link>https://github.com/chromimuk/Castable</link>
+	</cover>
+
+	<content>
+	<![CDATA[
+		<p>
+		  Small Python program that will generates an HTML page containing all the videos from a folder.
+      Opened with Chrome, the page will make an easy-to-use interface to stream the videos to local Chomecast devices.
+      <br /><br />
+      I had several interesting challenges working on it:
+      <ul>
+        <li>managing a local server for the Chromecast devices to ba able to read the videos ;</li>
+        <li>taking care of all the possible actions of a player (play, pause, stop, change video, restart) in a "remote" context (connection/disconnection to the device) ;</li>
+        <li>generating a good and usable interface in vanilla Javascript.</li>
+      </ul>
+      I'm quite satisfied with the outcome of this small project: even though it's not perfect,
+      I learned a lot of things doing it (and I have now a way to stream local videos to my Chromecast).
+    </p>
+	]]>
+	</content>
+
+  <screenshots>
+    <screenshot>/img/work/castable/castable1.png</screenshot>
+  </screenshots>
+</work>

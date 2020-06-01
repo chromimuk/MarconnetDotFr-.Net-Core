@@ -1,0 +1,94 @@
+﻿@page
+@model IndexModel
+@{
+
+}
+
+<p>
+    Hello, my name is Benjamin Marconnet and I'm @Model.CurrentAge years old. I'm from France and I currently live in Geneva (Switzerland).
+    I graduated from an engineering school a couple of years ago, where I studied software engineering.
+    Since then, I mostly worked as a C#/.NET developer.
+</p>
+<p>
+    <a href="https://github.com/chromimuk">My Github is here</a>.
+    You can contact me at <a href="mailto:benjamin@marconnet.fr">benjamin@marconnet.fr</a>.
+    Thank you for visiting!
+</p>
+
+<section>
+    <div class="website-category">
+        <h1>EXPERIENCES</h1>
+        <h2>Companies I had the chance to work with</h2>
+
+        @foreach (var exp in Model.WorkExperiences)
+        {
+        <div class="work-experience">
+            <div class="work-experience-content">
+                <div class="company-logo">
+                    <img data-src="@exp.Image" alt="" />
+                </div>
+                <div class="company-info">
+                    <div class="company-info-name">@exp.Title</div>
+                    <div class="company-info-date">@exp.Location</div>
+                </div>
+                <div class="company-description">
+                    <span>@exp.Description</span>
+                    <span><b>Technologies used:</b> @exp.Tech</span>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</section>
+
+<section>
+    <div class="website-category">
+        <h1>EDUCATION</h1>
+        <h2>Degrees obtained</h2>
+
+        @foreach (var diploma in Model.UniversityDiplomas)
+        {
+        <div class="work-experience">
+            <div class="work-experience-content">
+                <div class="company-logo">
+                    <img data-src="@diploma.Image" alt="" />
+                </div>
+                <div class="company-info">
+                    <div class="company-info-name s-hidden">@Html.Raw(@diploma.Title)</div>
+                    <div class="company-info-name s-show">@Html.Raw(@diploma.ShortTitle)</div>
+                    <div class="company-info-date university-info-date s-hidden">@diploma.Location</div>
+                    <div class="company-info-date s-show">@diploma.ShortLocation</div>
+                </div>
+
+                <div class="company-description university-description">
+                    <span>@diploma.Description</span>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</section>
+
+<section>
+    <div class="website-category">
+        <h1>WORK</h1>
+        <h2>Horsin' around in my free time</h2>
+
+        @foreach (var item in Model.PersonalWork)
+        {
+        <div class="work-experience">
+            <div class="work-experience-content">
+                <div class="company-info work-info">
+                    <div class="company-info-name work-info-name">
+                        <a asp-page="WorkExample" asp-route-title="@item.Alias">>> @item.Title</a>
+                    </div>
+                    <div class="company-info-date work-info-date">@item.Subtitle</div>
+                </div>
+                <div class="company-description work-description">
+                    <span>@Html.Raw(@item.Description)</span>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</section>

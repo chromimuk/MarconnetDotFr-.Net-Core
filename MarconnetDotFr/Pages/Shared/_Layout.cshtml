@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Benjamin Marconnet's website" />
+    <meta name="keywords" content="Marconnet, Benjamin Marconnet" />
+    <meta name="author" content="Benjamin Marconnet" />
+    <meta name="theme-color" content="#141414" />
+
+    <title>MarconnetDotFr</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    <div class="website-category website-title">
+        <a href="@Url.Action("Index")">
+            <h1>
+                <span>B</span><span>E</span><span class="website-title-redacted">_</span><span>N</span><span class="website-title-redacted">_</span>
+                <span>J</span><span>A</span>
+                <br />
+                <span class="website-title-redacted">_</span><span>M</span><span class="website-title-redacted">_</span><span>I</span><span>N</span><span class="website-title-redacted">_</span><span>M</span>
+                <br />
+                <span>A</span><span class="website-title-redacted">_</span><span class="website-title-redacted">_</span><span>R</span><span class="website-title-redacted">_</span><span>C</span><span>O</span>
+                <br />
+                <span>N</span><span class="website-title-redacted">_</span><span>N</span>
+                <span>E</span><span class="website-title-redacted">_</span><span class="website-title-redacted">_</span><span>T</span>
+            </h1>
+        </a>
+    </div>
+
+    <div class="website-body">
+        @RenderBody()
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

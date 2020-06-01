@@ -1,0 +1,23 @@
+<work>
+
+	<cover>
+		<title>Les Cahiers du football </title>
+		<subtitle>Android application</subtitle>
+		<period>(Spring 2012, updated during Summer 2014)</period>
+		<image>/img/work/cdf/front.jpg</image>
+	</cover>
+
+	<content>
+	<![CDATA[
+		<p>Les Cahiers du football is a french magazine, now available only online, which writes amazingly about football. This is an application to get the last articles of the website. </p>
+	]]>
+	</content>
+
+	<screenshots>
+
+		<screenshot>/img/work/cdf/chargement.png</screenshot>
+		<screenshot>/img/work/cdf/accueil.png</screenshot>
+		<screenshot>/img/work/cdf/article1.png</screenshot>
+		<screenshot>/img/work/cdf/article2.png</screenshot>
+	</screenshots>
+</work>

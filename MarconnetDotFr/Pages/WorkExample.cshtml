@@ -1,0 +1,39 @@
+﻿@page
+@model MarconnetDotFr.Pages.WorkExampleModel
+@{
+
+}
+
+<div>
+
+    <div>
+        <div>
+            <img class="work-image-cover" data-src="@Url.Content(@Model.WorkModel.Image)" alt="" />
+        </div>
+
+        <div>
+            <h2>@Model.WorkModel.Title</h2>
+            @Model.WorkModel.Subtitle
+            @if (!string.IsNullOrEmpty(@Model.WorkModel.Link))
+            {
+                <br />
+                <a href="@Model.WorkModel.Link"> Github</a>
+            }
+        </div>
+    </div>
+
+    <div class="row white">
+        <h1 class="centered">Description</h1>
+        @Html.Raw(@Model.WorkModel.Content)
+    </div>
+
+    <div>
+        <h1>Screenshots</h1>
+        @foreach (string screenshot in @Model.WorkModel.Screenshots)
+        {
+            <div class="work-screenshot @(@Model.WorkModel.Screenshots.Count == 1 ? "work-screenshot-alone" : "")">
+                <img class="work-image-cover" data-src="@screenshot" alt="" />
+            </div>
+        }
+    </div>
+</div>

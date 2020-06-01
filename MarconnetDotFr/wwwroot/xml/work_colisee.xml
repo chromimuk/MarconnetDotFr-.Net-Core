@@ -1,0 +1,61 @@
+<work>
+
+	<cover>
+		<title>Cinéma Le Colisée</title>
+		<subtitle>Android application</subtitle>
+		<period>(Spring 2016)</period>
+		<image>/img/work/colisee/front.jpg</image>
+		<link>https://github.com/chromimuk/Colisee</link>
+	</cover>
+
+	<content>
+	<![CDATA[
+		<p>
+		  Le Colisée is an independant movie theater in Montbéliard (France) and does not have a strong online presence (no website, communication with
+      clients made only via Facebook). To know what movies were currently shown, three solutions were available:
+      <ul>
+        <li>walk to the movie theater and find a program</li>
+        <li>check their Facebook profile and then download a PDF file with the list of all the movies shown this week</li>
+        <li>consult AlloCine.fr, a website giving info on French movie theaters, search for "Le Colisée" and then go through a (bloated) page with the list of all the movies</li>
+      </ul>
+
+      <br />
+
+      The lack of quick and easy solution and my wish to play with Google's Material Design led me to develop an Android
+      application.
+
+      <br /><br />
+
+      The first step was to find a way to get the showtimes of the movie theater.
+      The website AlloCiné was the only way to get the data so with the help of jsoup, a HTML Parser library, a program
+      was made in Java to download and provide a list of the current movies (along with a lot of details about them).
+      The idea was to take care of all the "logic" in this small program and then only focus on how to present this
+      data in the Android application.
+
+      <br /><br />
+
+      Once finished, I could start working on the Android application. While not being very complicated to use
+      (a list of movies is shown and if you click on one, it gives you more details about it), I had to deal
+      with threads and asynchronous requests to download data from the Internet (the library Glide was pretty useful for images),
+      implement Materiel Design elements (customised cardviews, collapsing toolbars, transitions, ...) and
+      provide different layouts (portrait/landscape for phone and tablets).
+
+      <br /><br />
+
+      The last thing to do was working on the applciation design. I liked the idea of having a dark background
+      (like in a cinema) with some touch of red (like the seats in a cinema!) and after a few tries I ended up
+      with something I was satisfied with. The style of the logo mimics the real Colisée logo.
+
+      <br /><br />
+
+      Finally, after testing it on several devices and as I was satisfied with the application,
+      I uploaded it on <a href="https://play.google.com/store/apps/details?id=fr.marconnet.colisee">Google Play Store</a>.
+    </p>
+	]]>
+	</content>
+
+	<screenshots>
+		<screenshot>/img/work/colisee/Colisee_Home.png</screenshot>
+	  <screenshot>/img/work/colisee/Colisee_Film.png</screenshot>
+	</screenshots>
+</work>
