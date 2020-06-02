@@ -1,52 +1,76 @@
 <works>
 
-    <work>
-      <title>Castable</title>
-      <alias>castable</alias>
-      <link>castable</link>
-      <subtitle>Python/Javascript</subtitle>
-      <description>
-        <![CDATA[
-					Small Python program that allows you to stream local videos to Chromecast
-				]]>
-      </description>
-    </work>
-
-    <work>
-      <title>I don't know CSS</title>
-      <alias>idkcss</alias>
-      <link>idkcss</link>
-      <subtitle>Web development</subtitle>
-      <description>
-        <![CDATA[
+  <work>
+    <title>I don't know CSS</title>
+    <alias>idkcss</alias>
+    <link>idkcss</link>
+    <subtitle>Web development</subtitle>
+    <description>
+      <![CDATA[
 					Tried to remake cool-looking websites to understand CSS shenanigans
 				]]>
-      </description>
-    </work>
+    </description>
+  </work>
 
-    <work>
-      <title>Cinéma Le Colisée</title>
-      <alias>colisee</alias>
-      <link>colisee</link>
-      <subtitle>Android application</subtitle>
-      <description>
-        <![CDATA[
+  <work>
+    <title>Castable</title>
+    <alias>castable</alias>
+    <link>castable</link>
+    <subtitle>Python/Javascript</subtitle>
+    <description>
+      <![CDATA[
+					Small Python program that allows you to stream local videos to Chromecast
+				]]>
+    </description>
+  </work>
+
+  <work>
+    <title>What Is The Closest Football Club</title>
+    <alias>witcfc</alias>
+    <link>witcfc</link>
+    <subtitle>Web development</subtitle>
+    <description>
+      <![CDATA[
+          Find the geographically closest teams to a city or a region
+				]]>
+    </description>
+  </work>
+
+  <work>
+    <title>Civilization V game generator</title>
+    <alias>civ5-gamegenerator</alias>
+    <link>civ5-gamegenerator</link>
+    <subtitle>Web development</subtitle>
+    <description>
+      <![CDATA[
+          Generate random game setup for Civilization V
+				]]>
+    </description>
+  </work>
+
+  <work>
+    <title>Cinéma Le Colisée</title>
+    <alias>colisee</alias>
+    <link>colisee</link>
+    <subtitle>Android application</subtitle>
+    <description>
+      <![CDATA[
 					Android application to find showtimes for Montbéliard's movie theather <i>Le Colisée</i>
 				]]>
-      </description>
-    </work>
+    </description>
+  </work>
 
-    <work>
-      <title>Les Cahiers du football</title>
-      <alias>cdf</alias>
-      <link>cdf</link>
-      <subtitle>Android application</subtitle>
-      <description>
-        <![CDATA[
+  <work>
+    <title>Les Cahiers du football</title>
+    <alias>cdf</alias>
+    <link>cdf</link>
+    <subtitle>Android application</subtitle>
+    <description>
+      <![CDATA[
 					<i>Les Cahiers du football</i> is a french magazine, now
 					available only online, which writes amazingly about football. This is
 					an application to get the last articles of the website.
 				]]>
-      </description>
-    </work>
+    </description>
+  </work>
 </works>

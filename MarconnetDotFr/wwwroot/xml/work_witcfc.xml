@@ -1,0 +1,26 @@
+<work>
+
+	<cover>
+		<title>What Is The Closest Football Club</title>
+		<subtitle>Web development</subtitle>
+		<period>(2019)</period>
+		<image>/img/work/witcfc/front.png</image>
+		<link>https://github.com/chromimuk/witcfc</link>
+	</cover>
+
+	<content>
+	<![CDATA[
+		<p>
+		  What is the closest football club from my hometown? From the place I currently live in? Can I support this team without being a bandwagoner?<br/>
+      This app will help you quickly find an answer by showing the geographically closest team to a city or a region.<br/>
+      Data comes from <a href="https://www.football-data.org">football-data.org</a><br/>
+      The map uses <a href="https://leafletjs.com">Leaflet</a> and <a href="https://foundation.wikimedia.org/wiki/Maps_Terms_of_Use">Wikimedia</a><br/>
+      Geoloc service thanks to <a href="https://wiki.openstreetmap.org/wiki/Nominatim">OSM's Nominatim</a>
+    </p>
+	]]>
+	</content>
+
+  <screenshots>
+    <screenshot>/img/work/witcfc/index.png</screenshot>
+  </screenshots>
+</work>

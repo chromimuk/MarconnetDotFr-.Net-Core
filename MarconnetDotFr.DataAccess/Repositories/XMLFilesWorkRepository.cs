@@ -19,6 +19,8 @@ namespace MarconnetDotFr.DataAccess.Repositories
             { "castable", "//xml//work_castable.xml" },
             { "cdf", "//xml//work_cdf.xml" },
             { "colisee", "//xml//work_colisee.xml" },
+            { "civ5-gamegenerator", "//xml//work_civ5-gamegenerator.xml" },
+            { "witcfc", "//xml//work_witcfc.xml" },
         };
 
         public XMLFilesWorkRepository(IHostingEnvironment hostingEnvironment)

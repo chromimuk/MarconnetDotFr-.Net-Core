@@ -1,0 +1,24 @@
+<work>
+
+	<cover>
+		<title>Civilization V game generator</title>
+		<subtitle>Web development</subtitle>
+		<period>(2019)</period>
+		<image>/img/work/civ5-gamegenerator/front.png</image>
+		<link>https://github.com/chromimuk/civ5-gamegenerator</link>
+	</cover>
+
+	<content>
+	<![CDATA[
+		<p>
+		  Civilization V is a turn-based strategy game. There are several ways to win the game and a lot of civilizations and maps to choose from. <br/>
+      This application acts like a random game generator by choosing for the player the map where the action takes place, 
+      the civilization the player have to incarnate and most importantly the kind of victory he must achieve (military, diplomacy, science or culture).
+    </p>
+	]]>
+	</content>
+
+  <screenshots>
+    <screenshot>/img/work/civ5-gamegenerator/index.png</screenshot>
+  </screenshots>
+</work>
