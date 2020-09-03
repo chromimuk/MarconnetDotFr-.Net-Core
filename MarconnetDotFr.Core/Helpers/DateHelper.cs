@@ -10,7 +10,7 @@ namespace MarconnetDotFr.Core.Helpers
             if (d2.Date > d1.AddYears(-yearDifferences))
                 yearDifferences--;
 
-            return yearDifferences;
+            return Math.Abs(yearDifferences);
         }
     }
 }

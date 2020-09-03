@@ -18,4 +18,10 @@
     <ProjectReference Include="..\MarconnetDotFr.Core\MarconnetDotFr.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="LastFM.AspNetCore.Stats">
+      <HintPath>..\..\LastFM.AspNetCore.Stats\LastFM.AspNetCore.Stats\bin\Debug\netcoreapp3.1\LastFM.AspNetCore.Stats.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

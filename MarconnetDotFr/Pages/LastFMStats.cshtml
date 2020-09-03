@@ -1,0 +1,125 @@
+﻿@page
+@model MarconnetDotFr.Pages.LastFMStatsModel
+@{
+    ViewData["Title"] = "LastFMStats";
+
+    var lastFMUser = Model.LastFMUser.Result;
+    var TopAlbumsResults = Model.TopAlbums.Result.Take(9).ToList();
+    var TopTracksResults = Model.TopTracks.Result.Take(9).ToList();
+    var RecentTracksResults = Model.RecentTracks.Result.Take(9).ToList();
+
+    var FavouriteAlbum = TopAlbumsResults.First();
+    var FavouriteTrack = TopTracksResults.First();
+}
+
+<style>
+
+    .userBox {
+        display: flex;
+    }
+
+        .userBox img {
+            border-radius: 50%;
+            height: 200px;
+        }
+
+        .userBox .userInfoDiv {
+            padding: 10px;
+        }
+
+
+    .albumBox {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .albumDiv {
+        flex: 0 0 33.333333%;
+    }
+
+        .albumDiv img {
+            width: 98%;
+        }
+
+    .tracksDiv {
+        display: flex;
+        padding: 10px;
+        border: 1px solid #fafafa;
+        margin-bottom: 5px;
+    }
+
+        .tracksDiv .cover {
+            border-radius: 50%;
+            height: 50px;
+        }
+
+        .tracksDiv .trackInfo {
+            margin-left: 5px;
+            margin-top: 15px;
+        }
+</style>
+
+<section>
+    <div class="userBox">
+        <img src="@lastFMUser.Image.Uri" alt="@lastFMUser.Name cover" />
+        <div class="userInfoDiv">
+            <h1>@lastFMUser.Name's last.fm</h1>
+            <p>Listened to @lastFMUser.Playcount songs.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h1>Recent tracks</h1>
+    <hr />
+
+    <div>
+        @foreach (var track in RecentTracksResults)
+        {
+            <div class="tracksDiv">
+                <img class="cover" src="@track.Image.Uri" alt="@track.Name cover" />
+                <div class="trackInfo">
+                    @track.Artist.Name - @track.Name
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<section>
+    <h1>Top albums</h1>
+    <hr />
+
+    <div>
+        <p>Favourite album of all time is <strong>@FavouriteAlbum.Name</strong> by <strong>@FavouriteAlbum.Artist.Name</strong>.</p>
+        <div class="albumBox">
+            @foreach (var album in TopAlbumsResults)
+            {
+                <div class="albumDiv">
+                    <img src="@album.Image.Uri" alt="@album.Name cover" />
+                    @*<br />
+                        @album.Name*@
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section>
+    <h1>Top tracks</h1>
+    <hr />
+
+    <div>
+        <p>Favourite track of all time is <strong>@FavouriteTrack.Name</strong> by <strong>@FavouriteTrack.Artist.Name</strong>.</p>
+
+        @foreach (var track in TopTracksResults)
+        {
+            <div class="tracksDiv">
+                <img class="cover" src="@track.Image.Uri" alt="@track.Name cover" />
+                <div class="trackInfo">
+                    @track.Artist.Name - @track.Name
+                </div>
+            </div>
+        }
+    </div>
+</section>
