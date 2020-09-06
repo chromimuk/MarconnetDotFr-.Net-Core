@@ -1,3 +1,4 @@
+using LastFM.AspNetCore.Stats.Entities;
 using MarconnetDotFr.Core.Services;
 using MarconnetDotFr.DataAccess.Repositories;
 using MarconnetDotFr.DataAccess.Repositories.Interfaces;
@@ -26,7 +27,15 @@ namespace MarconnetDotFr
             services.AddScoped<IResumeRepository, XMLFilesResumeRepository>();
             services.AddScoped<IWorkRepository, XMLFilesWorkRepository>();
 
-            services.AddScoped<ILastFMStatsService>(_ => new LastFMStatsService("chromimuk"));
+            string lastFMAPIKey = Configuration["LastFMCredentials:APIKey"];
+            string lastFMSharedSecret = Configuration["LastFMCredentials:SharedSecret"];
+            LastFMCredentials credentials = new LastFMCredentials()
+            {
+                APIKey = lastFMAPIKey,
+                SharedSecret = lastFMSharedSecret
+            };
+
+            services.AddScoped<ILastFMStatsService>(_ => new LastFMStatsService("chromimuk", credentials));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

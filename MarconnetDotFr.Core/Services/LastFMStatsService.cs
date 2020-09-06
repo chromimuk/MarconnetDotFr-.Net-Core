@@ -10,12 +10,8 @@ namespace MarconnetDotFr.Core.Services
         private readonly LastFMStatsController _controller;
         private readonly string _username;
 
-        public LastFMStatsService(string username)
+        public LastFMStatsService(string username, LastFMCredentials credentials)
         {
-            LastFMCredentials credentials = new LastFMCredentials();
-            credentials.APIKey = "";
-            credentials.SharedSecret = "";
-
             _controller = new LastFMStatsController(credentials);
             _username = username;
         }
