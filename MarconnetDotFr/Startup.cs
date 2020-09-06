@@ -27,6 +27,7 @@ namespace MarconnetDotFr
             services.AddScoped<IResumeRepository, XMLFilesResumeRepository>();
             services.AddScoped<IWorkRepository, XMLFilesWorkRepository>();
 
+            // LastFM
             string lastFMAPIKey = Configuration["LastFMCredentials:APIKey"];
             string lastFMSharedSecret = Configuration["LastFMCredentials:SharedSecret"];
             LastFMCredentials credentials = new LastFMCredentials()
@@ -34,8 +35,7 @@ namespace MarconnetDotFr
                 APIKey = lastFMAPIKey,
                 SharedSecret = lastFMSharedSecret
             };
-
-            services.AddScoped<ILastFMStatsService>(_ => new LastFMStatsService("chromimuk", credentials));
+            services.AddScoped<ILastFMStatsService>(_ => new LastFMStatsService(credentials));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

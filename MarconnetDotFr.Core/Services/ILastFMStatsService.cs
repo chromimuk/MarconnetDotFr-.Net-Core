@@ -6,11 +6,11 @@ namespace MarconnetDotFr.Core.Services
 {
     public interface ILastFMStatsService
     {
-        Task<LastFMUser> GetUserInfo();
-        Task<IEnumerable<Track>> GetLovedTracks();
-        Task<IEnumerable<Track>> GetRecentTracks();
-        Task<IEnumerable<Album>> GetTopAlbums();
-        Task<IEnumerable<Artist>> GetTopArtists();
-        Task<IEnumerable<Track>> GetTopTracks();
+        Task<LastFMUser> GetUserInfo(string username);
+        Task<IEnumerable<Track>> GetLovedTracks(string username);
+        Task<IEnumerable<Track>> GetRecentTracks(string username);
+        Task<IEnumerable<Album>> GetTopAlbums(string username);
+        Task<IEnumerable<Artist>> GetTopArtists(string username);
+        Task<IEnumerable<Track>> GetTopTracks(string username);
     }
 }

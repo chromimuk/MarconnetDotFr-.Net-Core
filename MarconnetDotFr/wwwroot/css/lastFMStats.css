@@ -1,0 +1,42 @@
+﻿.userBox {
+    display: flex;
+}
+
+    .userBox img {
+        border-radius: 50%;
+        height: 200px;
+    }
+
+    .userBox .userInfoDiv {
+        padding: 10px;
+    }
+
+.albumBox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.albumDiv {
+    flex: 0 0 33.333333%;
+}
+
+    .albumDiv img {
+        width: 98%;
+    }
+
+.tracksDiv {
+    display: flex;
+    padding: 10px;
+    border: 1px solid #fafafa;
+    margin-bottom: 5px;
+}
+
+    .tracksDiv .cover {
+        border-radius: 50%;
+        height: 50px;
+    }
+
+    .tracksDiv .trackInfo {
+        margin-left: 5px;
+        margin-top: 15px;
+    }

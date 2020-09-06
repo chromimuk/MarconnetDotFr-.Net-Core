@@ -4,60 +4,17 @@
     ViewData["Title"] = "LastFMStats";
 
     var lastFMUser = Model.LastFMUser.Result;
+    var TopArtistsResults = Model.TopArtists.Result.Take(9).ToList();
     var TopAlbumsResults = Model.TopAlbums.Result.Take(9).ToList();
     var TopTracksResults = Model.TopTracks.Result.Take(9).ToList();
     var RecentTracksResults = Model.RecentTracks.Result.Take(9).ToList();
 
+    var FavouriteArtist = TopArtistsResults.First();
     var FavouriteAlbum = TopAlbumsResults.First();
     var FavouriteTrack = TopTracksResults.First();
 }
 
-<style>
-
-    .userBox {
-        display: flex;
-    }
-
-        .userBox img {
-            border-radius: 50%;
-            height: 200px;
-        }
-
-        .userBox .userInfoDiv {
-            padding: 10px;
-        }
-
-
-    .albumBox {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .albumDiv {
-        flex: 0 0 33.333333%;
-    }
-
-        .albumDiv img {
-            width: 98%;
-        }
-
-    .tracksDiv {
-        display: flex;
-        padding: 10px;
-        border: 1px solid #fafafa;
-        margin-bottom: 5px;
-    }
-
-        .tracksDiv .cover {
-            border-radius: 50%;
-            height: 50px;
-        }
-
-        .tracksDiv .trackInfo {
-            margin-left: 5px;
-            margin-top: 15px;
-        }
-</style>
+<link href="~/css/lastFMStats.css" rel="stylesheet" />
 
 <section>
     <div class="userBox">
@@ -76,10 +33,31 @@
     <div>
         @foreach (var track in RecentTracksResults)
         {
+            {
+                string imageUri = track.Image.Uri != null ? track.Image.Uri.AbsoluteUri : "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png";
+
+                <div class="tracksDiv">
+                    <img class="cover" src="@imageUri" alt="@track.Name cover" />
+                    <div class="trackInfo">
+                        @track.Artist.Name - @track.Name
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</section>
+
+<section>
+    <h1>Top artists</h1>
+    <hr />
+
+    <div>
+        <p>Favourite artist of all time is <strong>@FavouriteArtist.Name</strong>.</p>
+        @foreach (var artist in TopArtistsResults)
+        {
             <div class="tracksDiv">
-                <img class="cover" src="@track.Image.Uri" alt="@track.Name cover" />
                 <div class="trackInfo">
-                    @track.Artist.Name - @track.Name
+                    @artist.Name
                 </div>
             </div>
         }
@@ -95,11 +73,13 @@
         <div class="albumBox">
             @foreach (var album in TopAlbumsResults)
             {
-                <div class="albumDiv">
-                    <img src="@album.Image.Uri" alt="@album.Name cover" />
-                    @*<br />
-                        @album.Name*@
-                </div>
+                {
+                    string imageUri = album.Image.Uri != null ? album.Image.Uri.AbsoluteUri : "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png";
+
+                    <div class="albumDiv">
+                        <img src="@album.Image.Uri" alt="@album.Name cover" />
+                    </div>
+                }
             }
         </div>
     </div>
@@ -114,12 +94,16 @@
 
         @foreach (var track in TopTracksResults)
         {
-            <div class="tracksDiv">
-                <img class="cover" src="@track.Image.Uri" alt="@track.Name cover" />
-                <div class="trackInfo">
-                    @track.Artist.Name - @track.Name
+            {
+                string imageUri = track.Image.Uri != null ? track.Image.Uri.AbsoluteUri : "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png";
+
+                <div class="tracksDiv">
+                    <img class="cover" src="@imageUri" alt="@track.Name cover" />
+                    <div class="trackInfo">
+                        @track.Artist.Name - @track.Name
+                    </div>
                 </div>
-            </div>
+            }
         }
     </div>
 </section>

@@ -8,42 +8,40 @@ namespace MarconnetDotFr.Core.Services
     public class LastFMStatsService : ILastFMStatsService
     {
         private readonly LastFMStatsController _controller;
-        private readonly string _username;
 
-        public LastFMStatsService(string username, LastFMCredentials credentials)
+        public LastFMStatsService(LastFMCredentials credentials)
         {
             _controller = new LastFMStatsController(credentials);
-            _username = username;
         }
 
-        public Task<LastFMUser> GetUserInfo()
+        public Task<LastFMUser> GetUserInfo(string username)
         {
-            return _controller.GetUserInfo(_username);
+            return _controller.GetUserInfo(username);
         }
 
-        public Task<IEnumerable<Track>> GetLovedTracks()
+        public Task<IEnumerable<Track>> GetLovedTracks(string username)
         {
-            return _controller.GetLovedTracks(_username);
+            return _controller.GetLovedTracks(username);
         }
 
-        public Task<IEnumerable<Track>> GetRecentTracks()
+        public Task<IEnumerable<Track>> GetRecentTracks(string username)
         {
-            return _controller.GetRecentTracks(_username);
+            return _controller.GetRecentTracks(username);
         }
 
-        public Task<IEnumerable<Album>> GetTopAlbums()
+        public Task<IEnumerable<Album>> GetTopAlbums(string username)
         {
-            return _controller.GetTopAlbums(_username);
+            return _controller.GetTopAlbums(username);
         }
 
-        public Task<IEnumerable<Artist>> GetTopArtists()
+        public Task<IEnumerable<Artist>> GetTopArtists(string username)
         {
-            return _controller.GetTopArtists(_username);
+            return _controller.GetTopArtists(username);
         }
 
-        public Task<IEnumerable<Track>> GetTopTracks()
+        public Task<IEnumerable<Track>> GetTopTracks(string username)
         {
-            return _controller.GetTopTracks(_username);
+            return _controller.GetTopTracks(username);
         }
     }
 }
