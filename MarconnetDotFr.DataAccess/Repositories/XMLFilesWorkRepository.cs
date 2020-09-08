@@ -21,6 +21,7 @@ namespace MarconnetDotFr.DataAccess.Repositories
             { "colisee", "//xml//work_colisee.xml" },
             { "civ5-gamegenerator", "//xml//work_civ5-gamegenerator.xml" },
             { "witcfc", "//xml//work_witcfc.xml" },
+            { "lastfmapi", "//xml//work_lastfmapi.xml" },
         };
 
         public XMLFilesWorkRepository(IHostingEnvironment hostingEnvironment)

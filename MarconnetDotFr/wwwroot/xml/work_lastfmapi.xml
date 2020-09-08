@@ -1,0 +1,20 @@
+<work>
+	<cover>
+		<title>.NET Core Last.fm stats API</title>
+		<subtitle>.NET Core</subtitle>
+		<period>(2020)</period>
+		<image>/img/work/lastfmstatsapi/front.png</image>
+		<link>https://github.com/chromimuk/LastFM.AspNetCore.Stats</link>
+	</cover>
+
+	<content>
+	<![CDATA[
+		<p>
+      I needed an excuse to mess with .NET Core and was interested on learning how projects ended up on Nuget.<br/>
+      The result is a small API that allow the user to get his Last.fm stats.<br/>
+      This API was included in this website, and a <a href="/LastFMStats?username=chromimuk">demo page</a> was created to make sure that the data we received match what we expected.<br/>
+      The Nuget package is available <a href="https://www.nuget.org/packages/LastFM.AspNetCore.Stats/">here</a>.
+    </p>
+	]]>
+	</content>
+</work>

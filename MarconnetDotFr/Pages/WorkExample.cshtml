@@ -1,7 +1,7 @@
 ﻿@page
 @model MarconnetDotFr.Pages.WorkExampleModel
 @{
-
+    bool hasScreenshots = @Model.WorkModel.Screenshots.Any();
 }
 
 <div>
@@ -27,13 +27,16 @@
         @Html.Raw(@Model.WorkModel.Content)
     </div>
 
-    <div>
-        <h1>Screenshots</h1>
-        @foreach (string screenshot in @Model.WorkModel.Screenshots)
-        {
-            <div class="work-screenshot @(@Model.WorkModel.Screenshots.Count == 1 ? "work-screenshot-alone" : "")">
-                <img class="work-image-cover" data-src="@screenshot" alt="" />
-            </div>
-        }
-    </div>
+    @if (hasScreenshots)
+    {
+        <div>
+            <h1>Screenshots</h1>
+            @foreach (string screenshot in @Model.WorkModel.Screenshots)
+            {
+                <div class="work-screenshot @(@Model.WorkModel.Screenshots.Count == 1 ? "work-screenshot-alone" : "")">
+                    <img class="work-image-cover" data-src="@screenshot" alt="" />
+                </div>
+            }
+        </div>
+    }
 </div>

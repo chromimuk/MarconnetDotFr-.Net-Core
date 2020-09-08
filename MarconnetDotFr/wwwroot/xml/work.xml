@@ -1,6 +1,18 @@
 <works>
 
   <work>
+    <title>.NET Core Last.fm stats API</title>
+    <alias>lastfmapi</alias>
+    <link>lastfmapi</link>
+    <subtitle>.NET Core API</subtitle>
+    <description>
+      <![CDATA[
+					API to access Last.fm user stats
+				]]>
+    </description>
+  </work>
+
+  <work>
     <title>I don't know CSS</title>
     <alias>idkcss</alias>
     <link>idkcss</link>
