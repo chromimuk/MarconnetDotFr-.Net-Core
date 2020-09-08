@@ -13,11 +13,11 @@ namespace MarconnetDotFr.UnitTests.Core.Helpers
             // Arrange
             int year1 = 1990;
             int year2 = 2000;
-            DateTime d1 = new DateTime(year1, 01, 01);
-            DateTime d2 = new DateTime(year2, 01, 01);
+            DateTime date1 = new DateTime(year1, 01, 01);
+            DateTime date2 = new DateTime(year2, 01, 01);
 
             // Act
-            int actualDifference = DateHelper.GetYearDifference(d1, d2);
+            int actualDifference = DateHelper.GetYearDifference(date1, date2);
 
             // Assert
             Assert.AreEqual(10, actualDifference);
@@ -29,11 +29,11 @@ namespace MarconnetDotFr.UnitTests.Core.Helpers
             // Arrange
             int year1 = 1990;
             int year2 = 2000;
-            DateTime d1 = new DateTime(year1, 01, 01);
-            DateTime d2 = new DateTime(year2, 01, 01);
+            DateTime date1 = new DateTime(year1, 01, 01);
+            DateTime date2 = new DateTime(year2, 01, 01);
 
             // Act
-            int actualDifference = DateHelper.GetYearDifference(d2, d1);
+            int actualDifference = DateHelper.GetYearDifference(date2, date1);
 
             // Assert
             Assert.AreEqual(10, actualDifference);
@@ -44,11 +44,11 @@ namespace MarconnetDotFr.UnitTests.Core.Helpers
         {
             // Arrange
             int year1 = 1990;
-            DateTime d1 = new DateTime(year1, 01, 01);
-            DateTime d2 = new DateTime(year1, 01, 01);
+            DateTime date1 = new DateTime(year1, 01, 01);
+            DateTime date2 = new DateTime(year1, 01, 01);
 
             // Act
-            int actualDifference = DateHelper.GetYearDifference(d1, d2);
+            int actualDifference = DateHelper.GetYearDifference(date1, date2);
 
             // Assert
             Assert.AreEqual(0, actualDifference);

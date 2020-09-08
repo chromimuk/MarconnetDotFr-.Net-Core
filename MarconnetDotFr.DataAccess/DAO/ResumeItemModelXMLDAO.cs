@@ -4,48 +4,48 @@ using System.Xml.Linq;
 
 namespace MarconnetDotFr.DataAccess.DAO
 {
-    public class ResumeItemModelXMLDAO : IResumeItemModelDAO
+    public class ResumeItemModelXmlDao : IResumeItemModelDao
     {
-        private XElement element;
+        private readonly XElement _element;
 
-        public ResumeItemModelXMLDAO(XElement e)
+        public ResumeItemModelXmlDao(XElement e)
         {
-            element = e;
+            _element = e;
         }
 
         public string GetDescription()
         {
-            return XMLHelper.GetValue(element, "description");
+            return XmlHelper.GetValue(_element, "description");
         }
 
         public string GetLocation()
         {
-            return XMLHelper.GetValue(element, "location");
+            return XmlHelper.GetValue(_element, "location");
         }
 
         public string GetShortLocation()
         {
-            return XMLHelper.GetValue(element, "short-location");
+            return XmlHelper.GetValue(_element, "short-location");
         }
 
         public string GetTitle()
         {
-            return XMLHelper.GetValue(element, "title");
+            return XmlHelper.GetValue(_element, "title");
         }
 
         public string GetShortTitle()
         {
-            return XMLHelper.GetValue(element, "short-title");
+            return XmlHelper.GetValue(_element, "short-title");
         }
 
         public string GetImage()
         {
-            return XMLHelper.GetValue(element, "image");
+            return XmlHelper.GetValue(_element, "image");
         }
 
         public string GetTech()
         {
-            return XMLHelper.GetValue(element, "tech");
+            return XmlHelper.GetValue(_element, "tech");
         }
     }
 }

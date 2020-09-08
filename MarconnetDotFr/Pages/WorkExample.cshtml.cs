@@ -2,7 +2,6 @@
 using MarconnetDotFr.DataAccess.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -24,7 +23,7 @@ namespace MarconnetDotFr.Pages
         public IActionResult OnGet(string title)
         {
             IEnumerable<WorkItemModel> workItems = _resumeRepository.GetPersonalWork();
-            IEnumerable<string> _availableWorks = _availableWorks = workItems.Select(x => x.Alias);
+            IEnumerable<string> _availableWorks = workItems.Select(x => x.Alias);
 
             if (title == "idkcss")
             {

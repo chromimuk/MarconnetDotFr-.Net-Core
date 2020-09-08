@@ -3,38 +3,38 @@ using System.Xml.Linq;
 
 namespace MarconnetDotFr.DataAccess.DAO
 {
-    public class WorkItemModelXMLDAO : IWorkItemModelDAO
+    public class WorkItemModelXmlDao : IWorkItemModelDao
     {
-        private XElement element;
+        private readonly XElement _element;
 
-        public WorkItemModelXMLDAO(XElement e)
+        public WorkItemModelXmlDao(XElement e)
         {
-            element = e;
+            _element = e;
         }
 
         public string GetAlias()
         {
-            return element.Element("alias").Value;
+            return _element.Element("alias").Value;
         }
 
         public string GetDescription()
         {
-            return element.Element("description").Value;
+            return _element.Element("description").Value;
         }
 
         public string GetLink()
         {
-            return element.Element("link").Value;
+            return _element.Element("link").Value;
         }
 
         public string GetSubtitle()
         {
-            return element.Element("subtitle").Value;
+            return _element.Element("subtitle").Value;
         }
 
         public string GetTitle()
         {
-            return element.Element("title").Value;
+            return _element.Element("title").Value;
         }
     }
 }

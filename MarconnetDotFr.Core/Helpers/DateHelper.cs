@@ -2,7 +2,7 @@
 
 namespace MarconnetDotFr.Core.Helpers
 {
-    public class DateHelper
+    public static class DateHelper
     {
         public static int GetYearDifference(DateTime d1, DateTime d2)
         {

@@ -1,6 +1,6 @@
 ﻿namespace MarconnetDotFr.DataAccess.DAO.Interfaces
 {
-    public interface IResumeItemModelDAO
+    public interface IResumeItemModelDao
     {
         string GetImage();
 

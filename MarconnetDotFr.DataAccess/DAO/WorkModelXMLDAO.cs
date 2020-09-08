@@ -4,48 +4,48 @@ using System.Xml.Linq;
 
 namespace MarconnetDotFr.DataAccess.DAO
 {
-    public class WorkModelXMLDAO : IWorkModelDAO
+    public class WorkModelXmlDao : IWorkModelDao
     {
-        private XElement element;
+        private readonly XElement _element;
 
-        public WorkModelXMLDAO(XDocument xDocument)
+        public WorkModelXmlDao(XDocument xDocument)
         {
-            element = xDocument.Element("work");
+            _element = xDocument.Element("work");
         }
 
         public string GetContent()
         {
-            return element.Element("content").Value;
+            return _element.Element("content").Value;
         }
 
         public string GetImage()
         {
-            return element.Element("cover").Element("image").Value;
+            return _element.Element("cover").Element("image").Value;
         }
 
         public string GetLink()
         {
-            return element.Element("cover").Element("link") == null ? "" : element.Element("cover").Element("link").Value;
+            return _element.Element("cover").Element("link") == null ? "" : _element.Element("cover").Element("link").Value;
         }
 
         public string GetPeriod()
         {
-            return element.Element("cover").Element("period").Value;
+            return _element.Element("cover").Element("period").Value;
         }
 
         public string GetSubtitle()
         {
-            return element.Element("cover").Element("subtitle").Value;
+            return _element.Element("cover").Element("subtitle").Value;
         }
 
         public string GetTitle()
         {
-            return element.Element("cover").Element("title").Value;
+            return _element.Element("cover").Element("title").Value;
         }
 
         public List<string> GetScreenshots()
         {
-            var elems = element.Descendants("screenshots").Descendants("screenshot");
+            var elems = _element.Descendants("screenshots").Descendants("screenshot");
             List<string> screenshots = new List<string>();
             foreach (XElement screenshot in elems)
             {

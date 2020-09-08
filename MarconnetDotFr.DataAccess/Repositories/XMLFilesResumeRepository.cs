@@ -48,7 +48,7 @@ namespace MarconnetDotFr.DataAccess.Repositories
             if (_isInitialized)
             {
                 items = _personalWorkDoc.Descendants("work")
-                    .Select(item => ResumeMapper.ToWorkItemModel(new WorkItemModelXMLDAO(item)));
+                    .Select(item => ResumeMapper.ToWorkItemModel(new WorkItemModelXmlDao(item)));
             }
 
             return items;
@@ -60,7 +60,7 @@ namespace MarconnetDotFr.DataAccess.Repositories
             if (_isInitialized)
             {
                 items = _resumeDoc.Descendants("education").Descendants("edu")
-                    .Select(item => ResumeMapper.ToResumeItemModel(new ResumeItemModelXMLDAO(item)));
+                    .Select(item => ResumeMapper.ToResumeItemModel(new ResumeItemModelXmlDao(item)));
             }
 
             return items;
@@ -72,7 +72,7 @@ namespace MarconnetDotFr.DataAccess.Repositories
             if (_isInitialized)
             {
                 items = _resumeDoc.Descendants("experiences").Descendants("exp")
-                    .Select(item => ResumeMapper.ToResumeItemModel(new ResumeItemModelXMLDAO(item)));
+                    .Select(item => ResumeMapper.ToResumeItemModel(new ResumeItemModelXmlDao(item)));
             }
 
             return items;

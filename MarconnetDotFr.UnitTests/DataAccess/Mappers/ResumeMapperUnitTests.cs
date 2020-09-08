@@ -32,7 +32,7 @@ namespace MarconnetDotFr.UnitTests.DataAccess.Mappers
                 new XElement("description", descriptionValue),
                 new XElement("tech", techValue)
             );
-            IResumeItemModelDAO dao = new ResumeItemModelXMLDAO(element);
+            IResumeItemModelDao dao = new ResumeItemModelXmlDao(element);
 
             // Act
             ResumeItemModel model = ResumeMapper.ToResumeItemModel(dao);
@@ -66,7 +66,7 @@ namespace MarconnetDotFr.UnitTests.DataAccess.Mappers
                 new XElement("subtitle", subtitleValue),
                 new XElement("description", descriptionValue)
             );
-            IWorkItemModelDAO dao = new WorkItemModelXMLDAO(element);
+            IWorkItemModelDao dao = new WorkItemModelXmlDao(element);
 
             // Act
             WorkItemModel model = ResumeMapper.ToWorkItemModel(dao);
@@ -101,7 +101,7 @@ namespace MarconnetDotFr.UnitTests.DataAccess.Mappers
             );
             XElement workElement = new XElement("work", coverElement, new XElement("content", contentValue));
             XDocument document = new XDocument(workElement);
-            IWorkModelDAO dao = new WorkModelXMLDAO(document);
+            IWorkModelDao dao = new WorkModelXmlDao(document);
 
             // Act
             WorkModel model = ResumeMapper.ToWorkModel(dao);

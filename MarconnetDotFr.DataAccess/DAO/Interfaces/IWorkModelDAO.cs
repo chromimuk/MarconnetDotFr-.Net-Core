@@ -2,7 +2,7 @@
 
 namespace MarconnetDotFr.DataAccess.DAO.Interfaces
 {
-    public interface IWorkModelDAO
+    public interface IWorkModelDao
     {
         string GetTitle();
 

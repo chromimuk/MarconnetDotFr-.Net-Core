@@ -27,7 +27,7 @@ namespace MarconnetDotFr.UnitTests.Core.Helpers
             );
 
             // Act
-            string result = XMLHelper.GetValue(element, "title");
+            string result = XmlHelper.GetValue(element, "title");
 
             // Assert
             Assert.AreEqual(titleValue, result);

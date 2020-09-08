@@ -5,7 +5,7 @@ namespace MarconnetDotFr.DataAccess.Mappers
 {
     public static class ResumeMapper
     {
-        public static ResumeItemModel ToResumeItemModel(IResumeItemModelDAO dao)
+        public static ResumeItemModel ToResumeItemModel(IResumeItemModelDao dao)
         {
             return new ResumeItemModel()
             {
@@ -19,7 +19,7 @@ namespace MarconnetDotFr.DataAccess.Mappers
             };
         }
 
-        public static WorkItemModel ToWorkItemModel(IWorkItemModelDAO dao)
+        public static WorkItemModel ToWorkItemModel(IWorkItemModelDao dao)
         {
             return new WorkItemModel()
             {
@@ -31,7 +31,7 @@ namespace MarconnetDotFr.DataAccess.Mappers
             };
         }
 
-        public static WorkModel ToWorkModel(IWorkModelDAO dao)
+        public static WorkModel ToWorkModel(IWorkModelDao dao)
         {
             return new WorkModel()
             {

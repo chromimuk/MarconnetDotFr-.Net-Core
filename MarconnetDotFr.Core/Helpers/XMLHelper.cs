@@ -2,7 +2,7 @@
 
 namespace MarconnetDotFr.Core.Helpers
 {
-    public class XMLHelper
+    public static class XmlHelper
     {
         public static string GetValue(XElement element, string name)
         {

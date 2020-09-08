@@ -6,6 +6,7 @@ namespace MarconnetDotFr.Pages
     {
         public void OnGet()
         {
+            // nothing to pass to the view
         }
     }
 }
