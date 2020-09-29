@@ -19,29 +19,29 @@ namespace MarconnetDotFr.Core.Services
             return _controller.GetUserInfo(username);
         }
 
-        public Task<IEnumerable<Track>> GetLovedTracks(string username)
+        public Task<IEnumerable<Track>> GetLovedTracks(string username, int limit)
         {
-            return _controller.GetLovedTracks(username);
+            return _controller.GetLovedTracks(username, limit);
         }
 
-        public Task<IEnumerable<Track>> GetRecentTracks(string username)
+        public Task<IEnumerable<Track>> GetRecentTracks(string username, int limit)
         {
-            return _controller.GetRecentTracks(username);
+            return _controller.GetRecentTracks(username, limit);
         }
 
-        public Task<IEnumerable<Album>> GetTopAlbums(string username)
+        public Task<IEnumerable<Album>> GetTopAlbums(string username, int limit)
         {
-            return _controller.GetTopAlbums(username);
+            return _controller.GetTopAlbums(username, limit);
         }
 
-        public Task<IEnumerable<Artist>> GetTopArtists(string username)
+        public Task<IEnumerable<Artist>> GetTopArtists(string username, int limit)
         {
-            return _controller.GetTopArtists(username);
+            return _controller.GetTopArtists(username, limit);
         }
 
-        public Task<IEnumerable<Track>> GetTopTracks(string username)
+        public Task<IEnumerable<Track>> GetTopTracks(string username, int limit)
         {
-            return _controller.GetTopTracks(username);
+            return _controller.GetTopTracks(username, limit);
         }
     }
 }

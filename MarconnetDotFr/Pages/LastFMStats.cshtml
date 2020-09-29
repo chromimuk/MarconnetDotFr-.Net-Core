@@ -3,107 +3,114 @@
 @{
     ViewData["Title"] = "LastFMStats";
 
-    var lastFMUser = Model.LastFMUser.Result;
-    var TopArtistsResults = Model.TopArtists.Result.Take(9).ToList();
-    var TopAlbumsResults = Model.TopAlbums.Result.Take(9).ToList();
-    var TopTracksResults = Model.TopTracks.Result.Take(9).ToList();
-    var RecentTracksResults = Model.RecentTracks.Result.Take(9).ToList();
+    var lastFMUser = Model.LastFMUser;
+    var TopArtistsResults = Model.TopArtists?.Result.ToList();
+    var TopAlbumsResults = Model.TopAlbums?.Result.ToList();
+    var TopTracksResults = Model.TopTracks?.Result.ToList();
+    var RecentTracksResults = Model.RecentTracks?.Result.ToList();
 
-    var FavouriteArtist = TopArtistsResults.First();
-    var FavouriteAlbum = TopAlbumsResults.First();
-    var FavouriteTrack = TopTracksResults.First();
+    var FavouriteArtist = TopArtistsResults?.First();
+    var FavouriteAlbum = TopAlbumsResults?.First();
+    var FavouriteTrack = TopTracksResults?.First();
 }
 
 <link href="~/css/lastFMStats.css" rel="stylesheet" />
 
-<section>
-    <div class="userBox">
-        <img src="@lastFMUser.Image.Uri" alt="@lastFMUser.Name cover" />
-        <div class="userInfoDiv">
-            <h1>@lastFMUser.Name's last.fm</h1>
-            <p>Listened to @lastFMUser.Playcount songs.</p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <h1>Recent tracks</h1>
-    <hr />
-
-    <div>
-        @foreach (var track in RecentTracksResults)
-        {
-            {
-                string imageUri = track.Image.Uri != null ? track.Image.Uri.AbsoluteUri : "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png";
-
-                <div class="tracksDiv">
-                    <img class="cover" src="@imageUri" alt="@track.Name cover" />
-                    <div class="trackInfo">
-                        @track.Artist.Name - @track.Name
-                    </div>
-                </div>
-            }
-        }
-    </div>
-</section>
-
-<section>
-    <h1>Top artists</h1>
-    <hr />
-
-    <div>
-        <p>Favourite artist of all time is <strong>@FavouriteArtist.Name</strong>.</p>
-        @foreach (var artist in TopArtistsResults)
-        {
-            <div class="tracksDiv">
-                <div class="trackInfo">
-                    @artist.Name
-                </div>
+@if (Model.ErrorMessage != null)
+{
+    <p>@Model.ErrorMessage</p>
+}
+else
+{
+    <section>
+        <div class="userBox">
+            <img src="@lastFMUser.Image.Uri" alt="@lastFMUser.Name cover" />
+            <div class="userInfoDiv">
+                <h1>@lastFMUser.Name's last.fm</h1>
+                <p>Listened to @lastFMUser.Playcount songs.</p>
             </div>
-        }
-    </div>
-</section>
+        </div>
+    </section>
 
-<section>
-    <h1>Top albums</h1>
-    <hr />
+    <section>
+        <h1>Recent tracks</h1>
+        <hr />
 
-    <div>
-        <p>Favourite album of all time is <strong>@FavouriteAlbum.Name</strong> by <strong>@FavouriteAlbum.Artist.Name</strong>.</p>
-        <div class="albumBox">
-            @foreach (var album in TopAlbumsResults)
+        <div>
+            @foreach (var track in RecentTracksResults)
             {
                 {
-                    string imageUri = album.Image.Uri != null ? album.Image.Uri.AbsoluteUri : "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png";
+                    string imageUri = track.Image.Uri != null ? track.Image.Uri.AbsoluteUri : "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png";
 
-                    <div class="albumDiv">
-                        <img src="@album.Image.Uri" alt="@album.Name cover" />
+                    <div class="tracksDiv">
+                        <img class="cover" src="@imageUri" alt="@track.Name cover" />
+                        <div class="trackInfo">
+                            @track.Artist.Name - @track.Name
+                        </div>
                     </div>
                 }
             }
         </div>
-    </div>
-</section>
+    </section>
 
-<section>
-    <h1>Top tracks</h1>
-    <hr />
+    <section>
+        <h1>Top artists</h1>
+        <hr />
 
-    <div>
-        <p>Favourite track of all time is <strong>@FavouriteTrack.Name</strong> by <strong>@FavouriteTrack.Artist.Name</strong>.</p>
-
-        @foreach (var track in TopTracksResults)
-        {
+        <div>
+            <p>Favourite artist of all time is <strong>@FavouriteArtist.Name</strong>.</p>
+            @foreach (var artist in TopArtistsResults)
             {
-                string imageUri = track.Image.Uri != null ? track.Image.Uri.AbsoluteUri : "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png";
-
                 <div class="tracksDiv">
-                    <img class="cover" src="@imageUri" alt="@track.Name cover" />
                     <div class="trackInfo">
-                        @track.Artist.Name - @track.Name
+                        @artist.Name
                     </div>
                 </div>
             }
-        }
-    </div>
-</section>
+        </div>
+    </section>
+
+    <section>
+        <h1>Top albums</h1>
+        <hr />
+
+        <div>
+            <p>Favourite album of all time is <strong>@FavouriteAlbum.Name</strong> by <strong>@FavouriteAlbum.Artist.Name</strong>.</p>
+            <div class="albumBox">
+                @foreach (var album in TopAlbumsResults)
+                {
+                    {
+                        string imageUri = album.Image.Uri != null ? album.Image.Uri.AbsoluteUri : "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png";
+
+                        <div class="albumDiv">
+                            <img src="@album.Image.Uri" alt="@album.Name cover" />
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h1>Top tracks</h1>
+        <hr />
+
+        <div>
+            <p>Favourite track of all time is <strong>@FavouriteTrack.Name</strong> by <strong>@FavouriteTrack.Artist.Name</strong>.</p>
+
+            @foreach (var track in TopTracksResults)
+            {
+                {
+                    string imageUri = track.Image.Uri != null ? track.Image.Uri.AbsoluteUri : "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png";
+
+                    <div class="tracksDiv">
+                        <img class="cover" src="@imageUri" alt="@track.Name cover" />
+                        <div class="trackInfo">
+                            @track.Artist.Name - @track.Name
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </section>
+}
