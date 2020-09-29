@@ -25,8 +25,7 @@ namespace MarconnetDotFr.Pages
 
         public void OnGet(string username = "chromimuk")
         {
-            var a = _lastFMStatsService.GetTopAlbums(username, 9).Result;
-
+            // quick connection to last.fm check
             try
             {
                 LastFMUser = _lastFMStatsService.GetUserInfo(username).Result;
@@ -36,8 +35,6 @@ namespace MarconnetDotFr.Pages
                 ErrorMessage = $"Could not connect to LastFM API ({e.Message})";
                 return;
             }
-
-
 
             TopAlbums = _lastFMStatsService.GetTopAlbums(username, 9);
             TopTracks = _lastFMStatsService.GetTopTracks(username, 9);
