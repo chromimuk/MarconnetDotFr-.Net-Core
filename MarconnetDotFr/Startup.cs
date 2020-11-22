@@ -1,4 +1,4 @@
-using LastFM.AspNetCore.Stats.Entities;
+using LastFM.AspNetCore.Stats.Utils;
 using MarconnetDotFr.Core.Services;
 using MarconnetDotFr.DataAccess.Repositories;
 using MarconnetDotFr.DataAccess.Repositories.Interfaces;
