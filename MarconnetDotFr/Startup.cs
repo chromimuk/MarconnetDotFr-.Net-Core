@@ -23,9 +23,11 @@ namespace MarconnetDotFr
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddKendo();
 
             services.AddScoped<IResumeRepository, XMLFilesResumeRepository>();
             services.AddScoped<IWorkRepository, XmlFilesWorkRepository>();
+            services.AddScoped<IFootyRepository, XmlFilesFootyRepository>();
 
             // LastFM
             string lastFMAPIKey = Configuration["LastFMCredentials:APIKey"];

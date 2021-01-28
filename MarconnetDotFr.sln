@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarconnetDotFr.Core", "Marc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarconnetDotFr.DataAccess", "MarconnetDotFr.DataAccess\MarconnetDotFr.DataAccess.csproj", "{FCD95CE9-9108-40EE-B33E-A6D3C742296D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarconnetDotFr.UnitTests", "MarconnetDotFr.UnitTests\MarconnetDotFr.UnitTests.csproj", "{1D3D9F7E-0779-4E5F-A808-596AF14CCD0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarconnetDotFr.UnitTests", "MarconnetDotFr.UnitTests\MarconnetDotFr.UnitTests.csproj", "{1D3D9F7E-0779-4E5F-A808-596AF14CCD0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
