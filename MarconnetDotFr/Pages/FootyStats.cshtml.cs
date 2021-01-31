@@ -14,7 +14,7 @@ namespace MarconnetDotFr.Pages
     {
         private readonly IConfiguration _configuration;
         private readonly IFootyRepository _footyRepository;
-        private IList<AttendanceItemModel> _attendances;
+        private IList<SeasonItemModel> seasons;
 
         public FootyStatsModel(IConfiguration configuration, IFootyRepository footyRepository)
         {
@@ -24,25 +24,20 @@ namespace MarconnetDotFr.Pages
 
         public void OnGet()
         {
+            // nothing special to do
         }
 
         public JsonResult OnPostRead()
         {
-            _attendances = _footyRepository.GetAttendances("fcsm").Reverse().ToList();
-            
-            _attendances.Single(x => x.season == "2001/2002").notes = "Nouveau Bonal";
-
-            foreach (var attendance in _attendances)
+            if (seasons == null)
             {
-                attendance.ranking = 21 - attendance.ranking;
-
-                if (attendance.division == "D1")
-                {
-                    attendance.ranking += 20;
-                }
+                seasons = _footyRepository.GetSeasons("fcsm").Reverse().ToList();
             }
 
-            return new JsonResult(_attendances);
+            // add notes
+            seasons.Single(x => x.season == "2001/2002").notes = "Nouveau Bonal";
+
+            return new JsonResult(seasons);
         }
     }
 }

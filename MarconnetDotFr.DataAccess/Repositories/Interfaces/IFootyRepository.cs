@@ -5,6 +5,6 @@ namespace MarconnetDotFr.DataAccess.Repositories.Interfaces
 {
     public interface IFootyRepository
     {
-        IEnumerable<AttendanceItemModel> GetAttendances(string club);
+        IEnumerable<SeasonItemModel> GetSeasons(string club);
     }
 }

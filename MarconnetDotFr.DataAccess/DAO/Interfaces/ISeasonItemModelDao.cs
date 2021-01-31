@@ -1,6 +1,6 @@
 ﻿namespace MarconnetDotFr.DataAccess.DAO.Interfaces
 {
-    public interface IAttendanceItemModelDao
+    public interface ISeasonItemModelDao
     {
         string GetDescription();
         string GetDivision();

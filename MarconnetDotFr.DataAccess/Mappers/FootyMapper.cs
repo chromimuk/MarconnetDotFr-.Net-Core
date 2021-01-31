@@ -5,9 +5,9 @@ namespace MarconnetDotFr.DataAccess.Mappers
 {
     public static class FootyMapper
     {
-        public static AttendanceItemModel ToAttendanceItemModel(IAttendanceItemModelDao dao)
+        public static SeasonItemModel ToSeasonItemModel(ISeasonItemModelDao dao)
         {
-            return new AttendanceItemModel()
+            return new SeasonItemModel()
             {
                 season = dao.GetDescription(),
                 division = dao.GetDivision(),

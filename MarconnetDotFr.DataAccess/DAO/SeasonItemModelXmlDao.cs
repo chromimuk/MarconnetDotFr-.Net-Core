@@ -4,11 +4,11 @@ using System.Xml.Linq;
 
 namespace MarconnetDotFr.DataAccess.DAO
 {
-    public class AttendanceItemModelXmlDao : IAttendanceItemModelDao
+    public class SeasonItemModelXmlDao : ISeasonItemModelDao
     {
         private readonly XElement _element;
 
-        public AttendanceItemModelXmlDao(XElement e)
+        public SeasonItemModelXmlDao(XElement e)
         {
             _element = e;
         }

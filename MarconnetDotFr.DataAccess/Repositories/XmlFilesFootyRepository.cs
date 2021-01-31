@@ -38,13 +38,13 @@ namespace MarconnetDotFr.DataAccess.Repositories
             }
         }
 
-        public IEnumerable<AttendanceItemModel> GetAttendances(string club)
+        public IEnumerable<SeasonItemModel> GetSeasons(string club)
         {
-            IEnumerable<AttendanceItemModel> items = new List<AttendanceItemModel>();
+            IEnumerable<SeasonItemModel> items = new List<SeasonItemModel>();
             if (_isInitialized)
             {
                 items = _fcsmAttendanceDoc.Descendants("fcsm").Descendants("seasons").Descendants("season")
-                    .Select(item => FootyMapper.ToAttendanceItemModel(new AttendanceItemModelXmlDao(item)));
+                    .Select(item => FootyMapper.ToSeasonItemModel(new SeasonItemModelXmlDao(item)));
             }
 
             return items;

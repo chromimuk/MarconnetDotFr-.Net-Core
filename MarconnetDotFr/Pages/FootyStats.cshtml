@@ -14,26 +14,75 @@
 </style>
 
 <div class="text-center">
-    @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.AttendanceItemModel>()
-        .Name("chart")
-        .Title("FCSM - Classement et affluence")
-        .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
-        .Series(series => {
-            series.Area(model => model.attendance).Name("Affluence moyenne").CategoryField("season").Color("#007eff").Axis("season")
-                .NoteTextField("notes")
-                .Notes(notes => notes.Label(label => label.Position(ChartNoteLabelPosition.Outside)).Position(ChartNotePosition.Left));
-            series.Line(model => model.ranking).Name("Classement").CategoryField("season").Color("#133478").Axis("ranking");
-        })
-        .CategoryAxis(axis => axis
-            .MajorGridLines(lines => lines.Visible(false))
-            .Labels(l => l.Step(10))
-            .Justify(true)
+
+    <h1>Classement</h1>
+
+    <div>
+        @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.SeasonItemModel>()
+            .Name("Ranking")
+            .Title("FCSM - Classement")
+            .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
+            .Series(series => {
+                series.Line(model => model.rankingForChart).Name("Classement").CategoryField("season").Color("#133478").Axis("rankingForChart").MissingValues(ChartSeriesMissingValues.Gap);
+            })
+            .CategoryAxis(axis => axis
+                .MajorGridLines(lines => lines.Visible(false))
+                .Labels(l => l.Step(10))
+                .Justify(true)
+            )
+            .ValueAxis(axis => axis.Numeric("rankingForChart").Color("#73c100").Min(00).Max(41).Visible(false).PlotBands(b => b.Add().From(0).To(20).Color("#f5f5f5").Opacity(0.8)))
+            .Tooltip(tooltip => tooltip.Visible(true).Template("#= dataItem.division # - #= dataItem.ranking #")
+            )
         )
-        .ValueAxis(axis => axis.Numeric("season").Labels(l => l.Step(1)))
-        .ValueAxis(axis => axis.Numeric("ranking").Color("#73c100").Min(00).Max(41).Visible(false).PlotBands(b => b.Add().From(0).To(20).Color("#f5f5f5").Opacity(0.8)))
-        .Tooltip(tooltip => tooltip.Visible(true).Format("{0:N0}")
+    </div>
+
+    <h1>Affluence</h1>
+
+    <div>
+        @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.SeasonItemModel>()
+            .Name("Attendance")
+            .Title("FCSM - Affluence")
+            .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
+            .Series(series => {
+                series.Area(model => model.attendance).Name("Affluence moyenne").CategoryField("season").Color("#007eff").Axis("season")
+                    .NoteTextField("notes")
+                    .Notes(notes => notes.Label(label => label.Position(ChartNoteLabelPosition.Outside)).Position(ChartNotePosition.Left));
+            })
+            .CategoryAxis(axis => axis
+                .MajorGridLines(lines => lines.Visible(false))
+                .Labels(l => l.Step(10))
+                .Justify(true)
+            )
+            .ValueAxis(axis => axis.Numeric("season").Labels(l => l.Step(1)))
+            .Tooltip(tooltip => tooltip.Visible(true).Format("{0:N0}")
+            )
         )
-    )
+    </div>
+
+    <h1>Classement et affluence</h1>
+
+    <div>
+        @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.SeasonItemModel>()
+            .Name("RankingAndAttendance")
+            .Title("FCSM - Classement et affluence")
+            .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
+            .Series(series => {
+                series.Area(model => model.attendance).Name("Affluence moyenne").CategoryField("season").Color("#007eff").Axis("season")
+                    .NoteTextField("notes")
+                    .Notes(notes => notes.Label(label => label.Position(ChartNoteLabelPosition.Outside)).Position(ChartNotePosition.Left));
+                series.Line(model => model.rankingForChart).Name("Classement").CategoryField("season").Color("#133478").Axis("rankingForChart").MissingValues(ChartSeriesMissingValues.Gap);
+            })
+            .CategoryAxis(axis => axis
+                .MajorGridLines(lines => lines.Visible(false))
+                .Labels(l => l.Step(10))
+                .Justify(true)
+            )
+            .ValueAxis(axis => axis.Numeric("season").Labels(l => l.Step(1)))
+            .ValueAxis(axis => axis.Numeric("rankingForChart").Color("#73c100").Min(00).Max(41).Visible(false).PlotBands(b => b.Add().From(0).To(20).Color("#f5f5f5").Opacity(0.8)))
+            .Tooltip(tooltip => tooltip.Visible(true).Format("{0:N0}")
+            )
+        )
+    </div>
 </div>
 
 <script>

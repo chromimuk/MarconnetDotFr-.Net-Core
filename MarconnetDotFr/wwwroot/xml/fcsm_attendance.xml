@@ -704,7 +704,7 @@
       <coupedelaligue></coupedelaligue>
       <europe></europe>
     </season>
-    <season>
+    <!--<season>
       <description>1942/1943</description>
       <division></division>
       <ranking></ranking>
@@ -730,7 +730,7 @@
       <coupedefrance></coupedefrance>
       <coupedelaligue></coupedelaligue>
       <europe></europe>
-    </season>
+    </season>-->
     <season>
       <description>1939/1940</description>
       <division>D1</division>
