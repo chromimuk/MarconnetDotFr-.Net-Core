@@ -7,6 +7,7 @@ using System.Linq;
 using MarconnetDotFr.DataAccess.Mappers;
 using MarconnetDotFr.DataAccess.DAO;
 using MarconnetDotFr.DataAccess.Repositories.Interfaces;
+using MarconnetDotFr.Core.Models.FootyStats;
 
 namespace MarconnetDotFr.DataAccess.Repositories
 {
@@ -38,13 +39,13 @@ namespace MarconnetDotFr.DataAccess.Repositories
             }
         }
 
-        public IEnumerable<SeasonItemModel> GetSeasons(string club)
+        public IEnumerable<SeasonModel> GetSeasons(string club)
         {
-            IEnumerable<SeasonItemModel> items = new List<SeasonItemModel>();
+            IEnumerable<SeasonModel> items = new List<SeasonModel>();
             if (_isInitialized)
             {
                 items = _fcsmAttendanceDoc.Descendants("fcsm").Descendants("seasons").Descendants("season")
-                    .Select(item => FootyMapper.ToSeasonItemModel(new SeasonItemModelXmlDao(item)));
+                    .Select(item => FootyMapper.ToSeasonItemModel(new SeasonModelXmlDao(item)));
             }
 
             return items;

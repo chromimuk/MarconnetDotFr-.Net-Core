@@ -8,5 +8,19 @@ namespace MarconnetDotFr.Core.Helpers
         {
             return element.Element(name) == null ? "" : element.Element(name).Value;
         }
+
+        public static int? GetIntValue(XElement element, string name)
+        {
+            string strValue = GetValue(element, name);
+
+            if (int.TryParse(strValue, out int value))
+            {
+                return value;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

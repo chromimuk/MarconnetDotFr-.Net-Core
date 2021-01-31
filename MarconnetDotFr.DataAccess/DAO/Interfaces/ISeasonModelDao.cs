@@ -1,6 +1,9 @@
-﻿namespace MarconnetDotFr.DataAccess.DAO.Interfaces
+﻿using MarconnetDotFr.Core.Models;
+using MarconnetDotFr.Core.Models.FootyStats;
+
+namespace MarconnetDotFr.DataAccess.DAO.Interfaces
 {
-    public interface ISeasonItemModelDao
+    public interface ISeasonModelDao
     {
         string GetDescription();
         string GetDivision();

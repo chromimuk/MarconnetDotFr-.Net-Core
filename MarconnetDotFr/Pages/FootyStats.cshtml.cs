@@ -1,5 +1,6 @@
 using MarconnetDotFr.Core.Helpers;
 using MarconnetDotFr.Core.Models;
+using MarconnetDotFr.Core.Models.FootyStats;
 using MarconnetDotFr.DataAccess.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -14,7 +15,7 @@ namespace MarconnetDotFr.Pages
     {
         private readonly IConfiguration _configuration;
         private readonly IFootyRepository _footyRepository;
-        private IList<SeasonItemModel> seasons;
+        private IList<SeasonModel> seasons;
 
         public FootyStatsModel(IConfiguration configuration, IFootyRepository footyRepository)
         {

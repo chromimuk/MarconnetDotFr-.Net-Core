@@ -1,31 +1,23 @@
 ﻿using MarconnetDotFr.Core.Helpers;
+using MarconnetDotFr.Core.Models;
+using MarconnetDotFr.Core.Models.FootyStats;
 using MarconnetDotFr.DataAccess.DAO.Interfaces;
 using System.Xml.Linq;
 
 namespace MarconnetDotFr.DataAccess.DAO
 {
-    public class SeasonItemModelXmlDao : ISeasonItemModelDao
+    public class SeasonModelXmlDao : ISeasonModelDao
     {
         private readonly XElement _element;
 
-        public SeasonItemModelXmlDao(XElement e)
+        public SeasonModelXmlDao(XElement e)
         {
             _element = e;
         }
 
         public int? GetAttendance()
         {
-            string strAttendance = XmlHelper.GetValue(_element, "attendance");
-
-            if (int.TryParse(strAttendance, out int attendance))
-            {
-                return attendance;
-            }
-            else
-            {
-                return null;
-            }
-
+            return XmlHelper.GetIntValue(_element, "attendance");
         }
 
         public string GetCoupeDeFrance()
@@ -60,16 +52,7 @@ namespace MarconnetDotFr.DataAccess.DAO
 
         public int? GetRanking()
         {
-            string strRanking = XmlHelper.GetValue(_element, "ranking");
-
-            if (int.TryParse(strRanking, out int attendance))
-            {
-                return attendance;
-            }
-            else
-            {
-                return null;
-            }
+            return XmlHelper.GetIntValue(_element, "ranking");
         }
     }
 }

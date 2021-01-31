@@ -18,7 +18,7 @@
     <h1>Classement</h1>
 
     <div>
-        @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.SeasonItemModel>()
+        @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.SeasonModel>()
             .Name("Ranking")
             .Title("FCSM - Classement")
             .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
@@ -31,15 +31,61 @@
                 .Justify(true)
             )
             .ValueAxis(axis => axis.Numeric("rankingForChart").Color("#73c100").Min(00).Max(41).Visible(false).PlotBands(b => b.Add().From(0).To(20).Color("#f5f5f5").Opacity(0.8)))
-            .Tooltip(tooltip => tooltip.Visible(true).Template("#= dataItem.division # - #= dataItem.ranking #")
+            .Tooltip(tooltip => tooltip.Visible(true).Template("#= dataItem.strDivision # - #= dataItem.ranking #")
             )
         )
     </div>
 
+    <div>
+        <div style="width:50%; float:left">
+            <h2>Coupe de France</h2>
+
+            <div>
+                @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.SeasonModel>()
+                    .Name("CoupeDeFrance")
+                    .Title("FCSM - Coupe de France")
+                    .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
+                    .Series(series => {
+                        series.Line(model => model.coupeDeFranceForChart).CategoryField("season").Color("#133478").Axis("coupeDeFranceForChart").MissingValues(ChartSeriesMissingValues.Gap);
+                    })
+                    .CategoryAxis(axis => axis
+                        .MajorGridLines(lines => lines.Visible(false))
+                        .Labels(l => l.Step(10))
+                        .Justify(true)
+                    )
+                    .ValueAxis(axis => axis.Numeric("coupeDeFranceForChart").Min(-3).Max(9).Visible(false).Color("#73c100"))
+                    .Tooltip(tooltip => tooltip.Visible(true).Template("#= dataItem.strCoupeDeFrance #")
+                ))
+            </div>
+        </div>
+        <div style="width:50%; float:left">
+            <h2>Coupe de la Ligue</h2>
+
+            <div>
+                @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.SeasonModel>()
+                    .Name("CoupeDeLaLigue")
+                    .Title("FCSM - Coupe de la Ligue")
+                    .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
+                    .Series(series => {
+                        series.Line(model => model.coupeDeLaLigueForChart).CategoryField("season").Color("#133478").Axis("coupeDeFranceForChart").MissingValues(ChartSeriesMissingValues.Gap);
+                    })
+                    .CategoryAxis(axis => axis
+                        .MajorGridLines(lines => lines.Visible(false))
+                        .Labels(l => l.Step(10))
+                        .Justify(true)
+                    )
+                    .ValueAxis(axis => axis.Numeric("coupeDeFranceForChart").Min(-3).Max(9).Visible(false).Color("#73c100"))
+                    .Tooltip(tooltip => tooltip.Visible(true).Template("#= dataItem.strCoupeDeLaLigue #")
+                ))
+            </div>
+        </div>
+    </div>
+
+
     <h1>Affluence</h1>
 
     <div>
-        @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.SeasonItemModel>()
+        @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.SeasonModel>()
             .Name("Attendance")
             .Title("FCSM - Affluence")
             .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
@@ -62,7 +108,7 @@
     <h1>Classement et affluence</h1>
 
     <div>
-        @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.SeasonItemModel>()
+        @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.SeasonModel>()
             .Name("RankingAndAttendance")
             .Title("FCSM - Classement et affluence")
             .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))

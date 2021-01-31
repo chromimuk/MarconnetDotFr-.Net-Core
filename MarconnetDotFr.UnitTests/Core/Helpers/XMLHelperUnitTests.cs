@@ -32,5 +32,35 @@ namespace MarconnetDotFr.UnitTests.Core.Helpers
             // Assert
             Assert.AreEqual(titleValue, result);
         }
+
+        [TestMethod]
+        public void XMLHelperUnitTests_GetIntValue()
+        {
+            // Arrange
+            int number = 123;
+            int? nullableNumber = 456;
+            int? nullNumber = null;
+            string notANumber = "a";
+
+            XElement element = new XElement(
+                "Root",
+                new XElement("number", number),
+                new XElement("nullableNumber", nullableNumber),
+                new XElement("nullNumber", nullNumber),
+                new XElement("notANumber", notANumber)
+            );
+
+            // Act
+            int? resultNumber = XmlHelper.GetIntValue(element, "number");
+            int? resultNullableNumber = XmlHelper.GetIntValue(element, "nullableNumber");
+            int? resultNullNumber = XmlHelper.GetIntValue(element, "nullNumber");
+            int? resultNotANumber = XmlHelper.GetIntValue(element, "notANumber");
+
+            // Assert
+            Assert.AreEqual(number, resultNumber);
+            Assert.AreEqual(nullableNumber, resultNullableNumber);
+            Assert.AreEqual(nullNumber, resultNullNumber);
+            Assert.IsNull(resultNotANumber);
+        }
     }
 }

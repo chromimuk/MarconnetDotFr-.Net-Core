@@ -17,7 +17,7 @@
       <ranking>16</ranking>
       <attendance>7331</attendance>
       <coupedefrance></coupedefrance>
-      <coupedelaligue></coupedelaligue>
+      <coupedelaligue>1/32f</coupedelaligue>
       <europe></europe>
     </season>
     <season>
@@ -25,8 +25,8 @@
       <division>D2</division>
       <ranking>10</ranking>
       <attendance>7918</attendance>
-      <coupedefrance>1/8f</coupedefrance>
-      <coupedelaligue></coupedelaligue>
+      <coupedefrance>1/32f</coupedefrance>
+      <coupedelaligue>1/32f</coupedelaligue>
       <europe></europe>
     </season>
     <season>
@@ -34,8 +34,8 @@
       <division>D2</division>
       <ranking>13</ranking>
       <attendance>9504</attendance>
-      <coupedefrance></coupedefrance>
-      <coupedelaligue>1/4f</coupedelaligue>
+      <coupedefrance>1/8f</coupedefrance>
+      <coupedelaligue>1/32f</coupedelaligue>
       <europe></europe>
     </season>
     <season>
@@ -43,8 +43,8 @@
       <division>D2</division>
       <ranking>15</ranking>
       <attendance>8943</attendance>
-      <coupedefrance>1/2f</coupedefrance>
-      <coupedelaligue></coupedelaligue>
+      <coupedefrance></coupedefrance>
+      <coupedelaligue>1/4f</coupedelaligue>
       <europe></europe>
     </season>
     <season>
@@ -52,8 +52,8 @@
       <division>D2</division>
       <ranking>10</ranking>
       <attendance>9290</attendance>
-      <coupedefrance></coupedefrance>
-      <coupedelaligue></coupedelaligue>
+      <coupedefrance>1/2f</coupedefrance>
+      <coupedelaligue>1/16f</coupedelaligue>
       <europe></europe>
     </season>
     <season>
@@ -79,7 +79,7 @@
       <division>D1</division>
       <ranking>14</ranking>
       <attendance>14023</attendance>
-      <coupedefrance></coupedefrance>
+      <coupedefrance>1/8f</coupedefrance>
       <coupedelaligue>1/8f</coupedelaligue>
       <europe>C31erT</europe>
     </season>
@@ -89,7 +89,7 @@
       <ranking>5</ranking>
       <attendance>12646</attendance>
       <coupedefrance>1/8f</coupedefrance>
-      <coupedelaligue></coupedelaligue>
+      <coupedelaligue>1/8f</coupedelaligue>
       <europe></europe>
     </season>
     <season>
@@ -98,7 +98,7 @@
       <ranking>16</ranking>
       <attendance>13307</attendance>
       <coupedefrance>1/4f</coupedefrance>
-      <coupedelaligue></coupedelaligue>
+      <coupedelaligue>1/16f</coupedelaligue>
       <europe></europe>
     </season>
     <season>
@@ -170,7 +170,7 @@
       <ranking>8</ranking>
       <attendance>16477</attendance>
       <coupedefrance>1/16f</coupedefrance>
-      <coupedelaligue></coupedelaligue>
+      <coupedelaligue>1/16f</coupedelaligue>
       <europe></europe>
     </season>
     <season>
@@ -179,7 +179,7 @@
       <ranking>1</ranking>
       <attendance>12358</attendance>
       <coupedefrance>1/32f</coupedefrance>
-      <coupedelaligue></coupedelaligue>
+      <coupedelaligue>1/32f</coupedelaligue>
       <europe></europe>
     </season>
     <season>
@@ -215,7 +215,7 @@
       <ranking>11</ranking>
       <attendance>4564</attendance>
       <coupedefrance>1/16f</coupedefrance>
-      <coupedelaligue></coupedelaligue>
+      <coupedelaligue>1/32f</coupedelaligue>
       <europe></europe>
     </season>
     <season>
@@ -704,33 +704,6 @@
       <coupedelaligue></coupedelaligue>
       <europe></europe>
     </season>
-    <!--<season>
-      <description>1942/1943</description>
-      <division></division>
-      <ranking></ranking>
-      <attendance></attendance>
-      <coupedefrance></coupedefrance>
-      <coupedelaligue></coupedelaligue>
-      <europe></europe>
-    </season>
-    <season>
-      <description>1941/1942</description>
-      <division></division>
-      <ranking></ranking>
-      <attendance></attendance>
-      <coupedefrance></coupedefrance>
-      <coupedelaligue></coupedelaligue>
-      <europe></europe>
-    </season>
-    <season>
-      <description>1940/1941</description>
-      <division></division>
-      <ranking></ranking>
-      <attendance></attendance>
-      <coupedefrance></coupedefrance>
-      <coupedelaligue></coupedelaligue>
-      <europe></europe>
-    </season>-->
     <season>
       <description>1939/1940</description>
       <division>D1</division>
@@ -794,10 +767,6 @@
       <coupedelaligue></coupedelaligue>
       <europe></europe>
     </season>
-
-
-
-
 
   </seasons>
 
