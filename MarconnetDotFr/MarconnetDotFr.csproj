@@ -17,6 +17,10 @@
     <ProjectReference Include="..\MarconnetDotFr.DataAccess\MarconnetDotFr.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\pdf\" />
+  </ItemGroup>
+
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptTarget>ESNext</TypeScriptTarget>
     <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
