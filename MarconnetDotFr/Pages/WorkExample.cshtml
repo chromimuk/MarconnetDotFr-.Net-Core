@@ -4,7 +4,8 @@
     bool hasScreenshots = @Model.WorkModel.Screenshots.Any();
 }
 
-<div>
+
+<div class="work-details">
 
     <div>
         <div>
@@ -13,7 +14,7 @@
 
         <div>
             <h2>@Model.WorkModel.Title</h2>
-            @Model.WorkModel.Subtitle
+            Tech: @Model.WorkModel.Subtitle
             @if (!string.IsNullOrEmpty(@Model.WorkModel.Link))
             {
                 <br />
@@ -38,5 +39,6 @@
                 </div>
             }
         </div>
+        <div style="clear:both"></div>
     }
 </div>

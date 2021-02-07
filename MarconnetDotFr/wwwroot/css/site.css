@@ -139,6 +139,15 @@ img {
     padding: 15px;
 }
 
+
+/* WORK EXAMPLE */
+
+.work-details {
+    background-color: #131f31;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 .work-image-cover {
     width: 100%;
 }
