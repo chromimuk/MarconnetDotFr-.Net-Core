@@ -4,6 +4,7 @@ using MarconnetDotFr.DataAccess.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace MarconnetDotFr.Pages
@@ -16,7 +17,7 @@ namespace MarconnetDotFr.Pages
         public int CurrentAge { get; set; }
         public IEnumerable<ResumeItemModel> WorkExperiences { get; set; }
         public IEnumerable<ResumeItemModel> UniversityDiplomas { get; set; }
-        public IEnumerable<WorkItemModel> PersonalWork { get; set; }
+        public IEnumerable<IGrouping<string, WorkItemModel>> PersonalWork { get; set; }
 
         public IndexModel(IConfiguration configuration, IResumeRepository resumeRepository)
         {
@@ -29,7 +30,7 @@ namespace MarconnetDotFr.Pages
             CurrentAge = DateHelper.GetYearDifference(DateTime.UtcNow, DateTime.Parse(_configuration["BirthdayDate"]));
             WorkExperiences = _resumeRepository.GetWorkExperiences();
             UniversityDiplomas = _resumeRepository.GetUniversityDiplomas();
-            PersonalWork = _resumeRepository.GetPersonalWork();
+            PersonalWork = _resumeRepository.GetPersonalWork().GroupBy(x => x.Subtitle);
         }
     }
 }

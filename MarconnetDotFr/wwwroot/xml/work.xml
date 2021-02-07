@@ -25,18 +25,6 @@
   </work>
 
   <work>
-    <title>Castable</title>
-    <alias>castable</alias>
-    <link>castable</link>
-    <subtitle>Python/Javascript</subtitle>
-    <description>
-      <![CDATA[
-					Small Python program that allows you to stream local videos to Chromecast
-				]]>
-    </description>
-  </work>
-
-  <work>
     <title>What Is The Closest Football Club</title>
     <alias>witcfc</alias>
     <link>witcfc</link>
@@ -82,6 +70,18 @@
 					<i>Les Cahiers du football</i> is a french magazine, now
 					available only online, which writes amazingly about football. This is
 					an application to get the last articles of the website.
+				]]>
+    </description>
+  </work>
+
+  <work>
+    <title>Castable</title>
+    <alias>castable</alias>
+    <link>castable</link>
+    <subtitle>Python</subtitle>
+    <description>
+      <![CDATA[
+					Small Python program that allows you to stream local videos to Chromecast
 				]]>
     </description>
   </work>

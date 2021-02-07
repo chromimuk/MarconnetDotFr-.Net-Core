@@ -19,7 +19,7 @@
 <body>
 
     <div class="website-category website-title">
-        <a href="@Url.Action("Index")">Benjamin Marconnet</a>
+        <a asp-page="Index">Benjamin Marconnet</a>
     </div>
 
     <div class="website-body">
@@ -30,5 +30,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
+
+    <div class="footer"></div>
 </body>
 </html>

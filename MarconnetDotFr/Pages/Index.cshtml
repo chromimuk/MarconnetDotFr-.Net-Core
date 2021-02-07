@@ -4,16 +4,18 @@
 
 }
 
-<p>
-    Hello, my name is Benjamin Marconnet and I'm @Model.CurrentAge years old. I'm from France and I currently live in Geneva (Switzerland).
-    I graduated from an engineering school a couple of years ago, where I studied software engineering.
-    Since then, I mostly worked as a C#/.NET developer.
-</p>
-<p>
-    My Github is <a href="https://github.com/chromimuk">here</a>, and my CV is avalaible <a href="~/pdf/EN___Resume_2021.pdf">as a PDF here</a>.
-    You can contact me at <a href="mailto:benjamin@marconnet.fr">benjamin@marconnet.fr</a>.
-    Thank you for visiting!
-</p>
+<div class="website-intro">
+    <p>
+        Hello, my name is Benjamin Marconnet and I'm @Model.CurrentAge years old. I'm from France and I currently live in Geneva (Switzerland).
+        I graduated from an engineering school a couple of years ago, where I studied software engineering.
+        Since then, I mostly worked as a C#/.NET developer.
+    </p>
+    <p>
+        My Github is <a href="https://github.com/chromimuk">here</a>, and my CV is avalaible <a href="~/pdf/EN___Resume_2021.pdf">as a PDF here</a>.
+        You can contact me at <a href="mailto:benjamin@marconnet.fr">benjamin@marconnet.fr</a>.
+        Thank you for visiting!
+    </p>
+</div>
 
 <section>
     <div class="website-category">
@@ -21,17 +23,23 @@
 
         @foreach (var item in Model.PersonalWork)
         {
-            <div class="homepage-item side-project-item">
-                <div class="side-project-item-content">
-                    <div class="homepage-item-title">
-                        <a asp-page="WorkExample" asp-route-title="@item.Alias">>> @item.Title</a>
-                    </div>
-                    <br />
-                    <div style="width:100%" class="">
-                        <span>@Html.Raw(@item.Description)</span>
+             <h2>@item.Key</h2>
+            
+             @foreach(var i in item)
+             {
+                <div class="homepage-item side-project-item">
+                    <div class="side-project-item-content">
+                        <div class="homepage-item-title">
+                            <a asp-page="WorkExample" asp-route-title="@i.Alias">>> @i.Title</a>
+                        </div>
+                        <br />
+                        <div style="width:100%" class="">
+                            <span>@Html.Raw(@i.Description)</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+             }
+
         }
     </div>
 </section>
