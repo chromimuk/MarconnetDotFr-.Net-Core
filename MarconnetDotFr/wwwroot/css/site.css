@@ -1,7 +1,15 @@
-﻿body {
+﻿/* GENERAL */
+
+@font-face {
+    font-family: 'HomepageBaukasten';
+    src: url('../font/HomepageBaukasten-Book.ttf');
+}
+
+body {
     margin: 0;
-    font-family: 'Fira Sans', sans-serif;
-    background: repeating-linear-gradient( -90deg, #fefefe, #fefefe 8.33333%, #fff 8.33333%, #fff 16.66666% );
+    font-family: 'HomepageBaukasten';
+    background-color: #213654;
+    color: #fff;
 }
 
 h1 {
@@ -14,16 +22,16 @@ h2 {
 }
 
 a, a:active {
-    color: #141414;
+    color: #D15252;
 }
 
     a h1, a:active h1 {
-        color: #fff;
+        color: #4B7FBF;
         text-decoration: none;
     }
 
     a:hover {
-        color: #ADADAD;
+        color: #4B7FBF;
     }
 
 img {
@@ -43,43 +51,24 @@ img {
     display: none;
 }
 
-.website-title-redacted {
-    color: #141414;
-}
-
 .website-title {
-    color: #fff;
-    background: #141414;
+    background: #131f31;
     position: relative;
     z-index: 1;
     padding: 1% 20px;
     text-align: center;
 }
 
-    .website-title:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: inherit;
-        display: block;
-        height: 50%;
-        z-index: -1;
-        -webkit-transform: skewY(-3deg);
-        transform: skewY(-3deg);
-        -webkit-transform-origin: 100%;
-        transform-origin: 100%;
-    }
-
 .website-smalltitle {
-    background: #141414;
     padding: 10px 20px;
 }
 
-    .website-smalltitle a {
-        color: #fff;
-    }
+.website-title a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: x-large;
+    text-transform: uppercase;
+}
 
 .website-category {
     margin-bottom: 10%;
@@ -87,101 +76,93 @@ img {
 
 .website-body {
     width: 83.33333%;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.work-experience {
-    margin-bottom: 10px;
-    border-left: 2px solid #141414;
+
+/* HOMEPAGE */
+
+
+.homepage-item {
+    width: 100%;
+    background-color: #131f31;
+    height: 125px;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
 }
 
-.work-experience-content {
-    padding: 5px 8.33333%;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    /* background: repeating-linear-gradient(
-        -90deg,
-        #eee,
-        #eee 8.33333%,
-        rgb(255, 255, 255) 8.33333%,
-        rgb(255, 255, 255) 16.66666%
-      ); */
-}
-
-.company-logo {
-    box-sizing: border-box;
-    width: 30%;
+.homepage-item-logo {
+    width: 33%;
     float: left;
 }
 
-    .company-logo img {
-        width: 80%;
-        filter: gray;
-        -webkit-filter: grayscale(1);
-        filter: grayscale(1);
-    }
+.homepage-item-logo-img {
+    height: 100px;
+    padding: 12px;
+    margin-left: 1px;
+    border-radius: 15%;
+}
 
-.company-info {
+.homepage-item-details {
+    width: 66%;
     float: left;
-    width: 70%;
 }
 
-.company-info-name {
-    font-size: 18px;
-    margin-bottom: 5px;
+.workexp-item-company-info-name, .uni-item-title {
+    margin-top: 10px;
 }
 
-.company-info-date {
-    font-size: 15px;
-    margin-bottom: 10px;
+.homepage-item-title {
+    font-size: 22px;
 }
 
-.company-description {
-    box-sizing: border-box;
+.homepage-item-location, .uni-location {
+    font-size: 14px;
+    margin-top: 10px;
 }
 
-    .company-description span {
-        display: inline-block;
-        margin-bottom: 10px;
-    }
+.homepage-item-details-note {
+    clear: both;
+    margin: 15px 10px 0 0;
+    text-align: right;
+    font-size: 12px;
+    color: #D15252;
+}
+
+.side-project-item {
+    height: auto;
+}
+
+.side-project-item-content {
+    padding: 15px;
+}
 
 .work-image-cover {
     width: 100%;
 }
 
-@media only screen and (min-width: 450px) {
-    .company-info-name {
-        font-size: 20px;
-        margin-top: 5px;
-    }
-
-    .company-info-date {
-        font-size: 17px;
-        margin-top: 5px;
+@media only screen and (min-width: 400px) {
+    .homepage-item-title {
+        font-size: 24px;
     }
 }
 
 @media only screen and (min-width: 500px) {
-    .company-info-name {
-        font-size: 21px;
-        margin-top: 10px;
-    }
-
-    .company-info-date {
-        font-size: 18px;
-        margin-top: 10px;
+    .homepage-item-title {
+        font-size: 26px;
     }
 }
 
 @media only screen and (min-width: 600px) {
-    .company-info-name {
-        font-size: 23px;
+
+    .homepage-item-title {
+        font-size: 28px;
     }
 
-    .company-info-date {
-        font-size: 20px;
+    .homepage-item-location, .uni-location {
+        font-size: 16px;
     }
 
     .work-screenshot {
@@ -208,56 +189,7 @@ img {
     }
 
     .website-title {
-        margin-bottom: 125px;
-    }
-
-    .work-experience-content {
-        justify-content: flex-end;
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    .company-logo {
-        width: 30%;
-        min-height: 172px;
-    }
-
-        .company-logo img {
-            width: 90%;
-            margin-top: 10px;
-        }
-
-    .company-info, .company-description {
-        width: 70%;
-        padding-left: 10%;
-        box-sizing: border-box;
-    }
-
-    .company-info-name {
-        float: left;
-        font-size: 28px;
-    }
-
-    .company-info-date {
-        float: left;
-        margin: 17px 0 0 25px;
-    }
-
-    .company-description {
-        margin-top: -115px;
-    }
-
-    .work-experience {
-        margin-bottom: 20px;
-    }
-
-    .university-info-date {
-        width: 100%;
-        margin: 0;
-    }
-
-    .university-description {
-        margin-top: -65px;
+        margin-bottom: 50px;
     }
 
     .work-info {
@@ -279,5 +211,21 @@ img {
         margin-top: 10px;
         width: 100%;
         padding: 0;
+    }
+
+    .homepage-item-logo {
+        width: 20%;
+    }
+
+    .homepage-item-details {
+        width: 80%;
+    }
+
+    .homepage-item-title {
+        font-size: 32px;
+    }
+
+    .homepage-item-location, .uni-location {
+        font-size: 20px;
     }
 }

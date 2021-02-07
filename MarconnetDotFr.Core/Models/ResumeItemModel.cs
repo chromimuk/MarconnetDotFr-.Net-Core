@@ -9,5 +9,6 @@
         public string ShortLocation { get; set; }
         public string Description { get; set; }
         public string Tech { get; set; }
+        public string Note { get; set; }
     }
 }

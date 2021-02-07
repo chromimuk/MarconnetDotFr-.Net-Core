@@ -15,7 +15,8 @@ namespace MarconnetDotFr.DataAccess.Mappers
                 Location = dao.GetLocation(),
                 ShortLocation = dao.GetShortLocation(),
                 Description = dao.GetDescription(),
-                Tech = dao.GetTech()
+                Tech = dao.GetTech(),
+                Note = dao.GetNote()
             };
         }
 

@@ -47,5 +47,10 @@ namespace MarconnetDotFr.DataAccess.DAO
         {
             return XmlHelper.GetValue(_element, "tech");
         }
+
+        public string GetNote()
+        {
+            return XmlHelper.GetValue(_element, "note");
+        }
     }
 }

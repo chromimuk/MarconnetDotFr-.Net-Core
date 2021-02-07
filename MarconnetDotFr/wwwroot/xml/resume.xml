@@ -3,8 +3,8 @@
   <experiences>
 
     <exp>
-      <image>/img/company-msc.png</image>
-      <title>MSC</title>
+      <image>/img/company-msc-white.png</image>
+      <title>Mediterranean Shipping Company</title>
       <location>Geneva, Switzerland</location>
       <description>
         Software engineer at MSC (Mediterranean Shipping Company), an international shipping company.
@@ -12,10 +12,11 @@
       <tech>
         C#, .NET MVC, SQL Server, Javascript (with Typescript), VSTS
       </tech>
+      <note>Working there since 2018!</note>
     </exp>
 
     <exp>
-      <image>/img/company-dialoginsight.png</image>
+      <image>/img/company-dialoginsight-color.png</image>
       <title>Dialog Insight</title>
       <location>Québec, Canada</location>
       <description>
@@ -24,10 +25,11 @@
       <tech>
         C#/.NET, SQL Server, Javascript, TFS
       </tech>
+      <note></note>
     </exp>
 
     <exp>
-      <image>/img/company-tdk.png</image>
+      <image>/img/company-tdk-color.png</image>
       <title>TDK-EPCOS</title>
       <location>New Jersey, US</location>
       <description>
@@ -36,10 +38,11 @@
       <tech>
         C#/.NET, SQL Server, Javascript, Bitbucket, Jira
       </tech>
+      <note></note>
     </exp>
 
     <exp>
-      <image>/img/company-novartis.png</image>
+      <image>/img/company-novartis-color.png</image>
       <title>Novartis</title>
       <location>Basel, Switzerland</location>
       <description>
@@ -48,24 +51,27 @@
       <tech>
         PHP (CakePHP), Javascript
       </tech>
+      <note></note>
     </exp>
 
     <exp>
-      <image>/img/company-universityofportsmouth.png</image>
+      <image>/img/company-universityofportsmouth-color.png</image>
       <title>University of Portsmouth</title>
+      <location>Portsmouth, UK</location>
       <description>
         Internship where I had the opportunity to work on a program managing and processing DNA data.
       </description>
       <tech>
         Perl
       </tech>
+      <note></note>
     </exp>
   </experiences>
 
   <education>
 
     <edu>
-      <image>/img/uni-utbm.png</image>
+      <image>/img/uni-utbm-color.png</image>
       <title>French Master's Degree</title>
       <short-title>Master's Degree</short-title>
       <location>Université de Technologie de Belfort-Montbéliard (Belfort, France)</location>
@@ -76,8 +82,8 @@
     </edu>
 
     <edu>
-      <image>/img/uni-iutbm.png</image>
-      <title><![CDATA[ <i>DUT Informatique</i> ]]></title>
+      <image>/img/uni-iutbm-color.png</image>
+      <title>University Diploma of Technology</title>
       <short-title>DUT Informatique</short-title>
       <location>Institut Universitaire de Technologie de Belfort-Montbéliard (Belfort, France)</location>
       <short-location>IUT-BM (France)</short-location>

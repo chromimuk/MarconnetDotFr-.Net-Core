@@ -15,5 +15,7 @@
         string GetDescription();
 
         string GetTech();
+
+        string GetNote();
     }
 }
