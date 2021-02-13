@@ -99,7 +99,6 @@ img {
 .homepage-item-logo-img {
     height: 100px;
     padding: 12px;
-    margin-left: 1px;
     border-radius: 15%;
 }
 
@@ -192,10 +191,6 @@ img {
     }
 
     .website-category {
-        margin-bottom: 75px;
-    }
-
-    .website-title {
         margin-bottom: 50px;
     }
 
@@ -234,5 +229,49 @@ img {
 
     .homepage-item-location, .uni-location {
         font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+
+    .website-intro {
+        margin-bottom: 40px;
+    }
+
+    .website-body {
+        max-width: 1200px;
+    }
+
+    .side-project-section {
+        columns: 500px;
+    }
+
+    .side-project-section-item {
+        margin: 0 5%;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .website-category-experience {
+        width: 47%;
+        margin: 0 1.5%;
+        float: left;
+    }
+
+    .website-category-experience-education .homepage-item {
+        height: 150px;
+    }
+
+    .homepage-item-title {
+        font-size: 28px;
+    }
+
+    .homepage-item-logo {
+        width: 25%;
+    }
+
+    .homepage-item-details {
+        width: 75%;
     }
 }

@@ -17,75 +17,87 @@
     </p>
 </div>
 
+
 <section>
     <div class="website-category">
         <h1>SIDE PROJECTS</h1>
 
-        @foreach (var item in Model.PersonalWork)
-        {
-             <h2>@item.Key</h2>
-            
-             @foreach(var i in item)
-             {
-                <div class="homepage-item side-project-item">
-                    <div class="side-project-item-content">
-                        <div class="homepage-item-title">
-                            <a asp-page="WorkExample" asp-route-title="@i.Alias">>> @i.Title</a>
-                        </div>
-                        <br />
-                        <div style="width:100%" class="">
-                            <span>@Html.Raw(@i.Description)</span>
-                        </div>
-                    </div>
-                </div>
-             }
+        <div class="side-project-section">
 
-        }
+            @foreach (var item in Model.PersonalWork)
+            {
+                <div class="side-project-section-item">
+
+                    <h2>@item.Key</h2>
+
+                    @foreach (var i in item)
+                    {
+                        <div class="homepage-item side-project-item">
+                            <div class="side-project-item-content">
+                                <div class="homepage-item-title">
+                                    <a asp-page="WorkExample" asp-route-title="@i.Alias">>> @i.Title</a>
+                                </div>
+                                <br />
+                                <div style="width:100%" class="">
+                                    <span>@Html.Raw(@i.Description)</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            }
+        </div>
+
+        <div style="clear: both"></div>
     </div>
 </section>
 
 <section>
-    <div class="website-category">
-        <h1>WORK EXPERIENCES</h1>
 
-        @foreach (var exp in Model.WorkExperiences)
-        {
-            <div class="homepage-item">
-                <div class="homepage-item-logo">
-                    <img class="homepage-item-logo-img" data-src="@exp.Image" alt="">
-                </div>
-                <div class="homepage-item-details">
-                    <div class="homepage-item-title workexp-item-company-info-name">@exp.Title</div>
-                    <div class="homepage-item-location">@exp.Location</div>
-                    <div class="homepage-item-details-note">
-                        <span>@exp.Note</span>
+    <div class="website-category">
+
+            <h1>EXPERIENCES</h1>
+        <div class="website-category-experiences">
+
+            <div class="website-category-experience">
+                <h2>WORK</h2>
+                @foreach (var exp in Model.WorkExperiences)
+                {
+                    <div class="homepage-item">
+                        <div class="homepage-item-logo">
+                            <img class="homepage-item-logo-img" data-src="@exp.Image" alt="">
+                        </div>
+                        <div class="homepage-item-details">
+                            <div class="homepage-item-title workexp-item-company-info-name">@exp.Title</div>
+                            <div class="homepage-item-location">@exp.Location</div>
+                            <div class="homepage-item-details-note">
+                                <span>@exp.Note</span>
+                            </div>
+                        </div>
+                        <div style="clear: both"></div>
                     </div>
-                </div>
-                <div style="clear: both"></div>
+                }
             </div>
-        }
-    </div>
-</section>
 
-<section>
-    <div class="website-category">
-        <h1>EDUCATION</h1>
-
-        @foreach (var diploma in Model.UniversityDiplomas)
-        {
-            <div class="homepage-item">
-                <div class="homepage-item-logo">
-                    <img class="homepage-item-logo-img" data-src="@diploma.Image" alt="">
-                </div>
-                <div class="homepage-item-details">
-                    <div class="homepage-item-title uni-item-title s-hidden">@diploma.Title</div>
-                    <div class="homepage-item-title uni-item-title s-show">@diploma.ShortTitle</div>
-                    <div class="homepage-item-location uni-location s-hidden">@diploma.Location</div>
-                    <div class="homepage-item-location uni-location s-show">@diploma.ShortLocation</div>
-                </div>
-                <div style="clear: both"></div>
+            <div class="website-category-experience website-category-experience-education">
+                <h2>EDUCATION</h2>
+                @foreach (var diploma in Model.UniversityDiplomas)
+                {
+                    <div class="homepage-item">
+                        <div class="homepage-item-logo">
+                            <img class="homepage-item-logo-img" data-src="@diploma.Image" alt="">
+                        </div>
+                        <div class="homepage-item-details">
+                            <div class="homepage-item-title uni-item-title s-hidden">@diploma.Title</div>
+                            <div class="homepage-item-title uni-item-title s-show">@diploma.ShortTitle</div>
+                            <div class="homepage-item-location uni-location s-hidden">@diploma.Location</div>
+                            <div class="homepage-item-location uni-location s-show">@diploma.ShortLocation</div>
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                }
             </div>
-        }
-    </div>
+        </div>
+        </div>
 </section>
-
