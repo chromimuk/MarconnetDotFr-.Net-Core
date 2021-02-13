@@ -61,12 +61,12 @@ img {
 .website-title a {
     color: #FFFFFF;
     text-decoration: none;
-    font-size: x-large;
+    font-size: 36px;
     text-transform: uppercase;
 }
 
 .website-category {
-    margin-bottom: 10%;
+    margin-bottom: 25px;
 }
 
 .website-intro {
@@ -85,14 +85,14 @@ img {
 .homepage-item {
     width: 100%;
     background-color: #131f31;
-    height: 125px;
     color: white;
     margin-bottom: 15px;
     border-radius: 5px;
+    min-height: 125px;
 }
 
 .homepage-item-logo {
-    width: 33%;
+    width: 40%;
     float: left;
 }
 
@@ -104,7 +104,7 @@ img {
 }
 
 .homepage-item-details {
-    width: 66%;
+    width: 60%;
     float: left;
 }
 
@@ -123,7 +123,7 @@ img {
 
 .homepage-item-details-note {
     clear: both;
-    margin: 15px 10px 0 0;
+    margin: 10px 10px 5px 0;
     text-align: right;
     font-size: 12px;
     color: #D15252;
