@@ -1,0 +1,56 @@
+﻿[
+  // CSS
+  {
+    "outputFileName": "wwwroot/css/_site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/lib/_lib.min.css",
+    "inputFiles": [
+      "wwwroot/js/lib/leaflet/leaflet.css"
+    ]
+  },
+
+  // JS
+  {
+    "outputFileName": "wwwroot/js/_site.min.js",
+    "inputFiles": [
+      "wwwroot/js/models/coordinate.js",
+      "wwwroot/js/tools.js",
+      "wwwroot/js/map_helper.js",
+      "wwwroot/js/site.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/index/_index.min.js",
+    "inputFiles": [
+      "wwwroot/js/index/dom_finder.js",
+      "wwwroot/js/index/main.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/lib/_lib.min.js",
+    "inputFiles": [
+      "wwwroot/js/lib/leaflet/leaflet.js",
+      "wwwroot/js/lib/element-queries.js",
+      "wwwroot/js/lib/resize-sensor.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

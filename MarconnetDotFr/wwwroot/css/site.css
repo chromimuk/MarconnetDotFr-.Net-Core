@@ -230,6 +230,11 @@ img {
     .homepage-item-location, .uni-location {
         font-size: 20px;
     }
+
+    #mapid {
+        height: 500px;
+        background-color: rgba(0, 0, 0, .125);
+    }
 }
 
 @media only screen and (min-width: 1300px) {
