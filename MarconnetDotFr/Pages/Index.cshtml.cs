@@ -17,7 +17,8 @@ namespace MarconnetDotFr.Pages
         public int CurrentAge { get; set; }
         public IEnumerable<ResumeItemModel> WorkExperiences { get; set; }
         public IEnumerable<ResumeItemModel> UniversityDiplomas { get; set; }
-        public IEnumerable<IGrouping<string, WorkItemModel>> PersonalWork { get; set; }
+        public IEnumerable<WorkItemModel> HighlightedSideProjects { get; set; }
+        public IEnumerable<IGrouping<string, WorkItemModel>> SideProjects { get; set; }
 
         public IndexModel(IConfiguration configuration, IResumeRepository resumeRepository)
         {
@@ -30,7 +31,10 @@ namespace MarconnetDotFr.Pages
             CurrentAge = DateHelper.GetYearDifference(DateTime.UtcNow, DateTime.Parse(_configuration["BirthdayDate"]));
             WorkExperiences = _resumeRepository.GetWorkExperiences();
             UniversityDiplomas = _resumeRepository.GetUniversityDiplomas();
-            PersonalWork = _resumeRepository.GetPersonalWork().GroupBy(x => x.Subtitle);
+
+            IEnumerable<WorkItemModel> sideProjects = _resumeRepository.GetSideProjects();
+            HighlightedSideProjects = sideProjects.Where(x => x.IsHighlighted);
+            SideProjects = sideProjects.Where(x => !x.IsHighlighted).GroupBy(x => x.Subtitle);
         }
     }
 }

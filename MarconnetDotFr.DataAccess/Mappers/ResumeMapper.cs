@@ -28,7 +28,9 @@ namespace MarconnetDotFr.DataAccess.Mappers
                 Alias = dao.GetAlias(),
                 Description = dao.GetDescription(),
                 Link = dao.GetLink(),
-                Subtitle = dao.GetSubtitle()
+                Subtitle = dao.GetSubtitle(),
+                Image = dao.GetImage(),
+                IsHighlighted = dao.GetIsHighlighted()
             };
         }
 

@@ -240,7 +240,7 @@ img {
 @media only screen and (min-width: 1300px) {
 
     .website-intro {
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
 
     .website-body {
@@ -278,5 +278,10 @@ img {
 
     .homepage-item-details {
         width: 75%;
+    }
+
+    .homepage-item-logo-img {
+        margin: 0 auto;
+        display: block;
     }
 }

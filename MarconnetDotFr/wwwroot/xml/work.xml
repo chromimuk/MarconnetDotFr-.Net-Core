@@ -7,9 +7,11 @@
     <subtitle>.NET Core API</subtitle>
     <description>
       <![CDATA[
-					API to access Last.fm user stats
+					API to access Last.fm user stats (favourite artists, most listened albums, etc.)
 				]]>
     </description>
+    <image>/img/work-lastfmapi.png</image>
+    <isHighlighted>true</isHighlighted>
   </work>
 
   <work>
@@ -22,6 +24,7 @@
 					Tried to remake cool-looking websites to understand CSS shenanigans
 				]]>
     </description>
+    <isHighlighted>false</isHighlighted>
   </work>
 
   <work>
@@ -34,6 +37,7 @@
           Find the geographically closest teams to a city or a region
 				]]>
     </description>
+    <isHighlighted>false</isHighlighted>
   </work>
 
   <work>
@@ -46,6 +50,7 @@
           Generate random game setup for Civilization V
 				]]>
     </description>
+    <isHighlighted>false</isHighlighted>
   </work>
 
   <work>
@@ -58,6 +63,7 @@
 					Android application to find showtimes for Montbéliard's movie theather <i>Le Colisée</i>
 				]]>
     </description>
+    <isHighlighted>false</isHighlighted>
   </work>
 
   <work>
@@ -72,6 +78,7 @@
 					an application to get the last articles of the website.
 				]]>
     </description>
+    <isHighlighted>false</isHighlighted>
   </work>
 
   <work>
@@ -84,5 +91,6 @@
 					Small Python program that allows you to stream local videos to Chromecast
 				]]>
     </description>
+    <isHighlighted>false</isHighlighted>
   </work>
 </works>

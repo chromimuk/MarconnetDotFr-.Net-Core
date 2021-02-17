@@ -9,6 +9,6 @@ namespace MarconnetDotFr.DataAccess.Repositories.Interfaces
 
         IEnumerable<ResumeItemModel> GetUniversityDiplomas();
 
-        IEnumerable<WorkItemModel> GetPersonalWork();
+        IEnumerable<WorkItemModel> GetSideProjects();
     }
 }

@@ -28,25 +28,17 @@ namespace MarconnetDotFr.DataAccess.Mappers
 
         private static CupPerformance ToCupPerformance(string strCupPerformance)
         {
-            switch (strCupPerformance)
+            return strCupPerformance switch
             {
-                case "Vainqueur":
-                    return CupPerformance.Winner;
-                case "Finale":
-                    return CupPerformance.Final;
-                case "1/2f":
-                    return CupPerformance.SemiFinals;
-                case "1/4f":
-                    return CupPerformance.QuarterFinals;
-                case "1/8f":
-                    return CupPerformance.RoundOfEight;
-                case "1/16f":
-                    return CupPerformance.RoundOfSixteen;
-                case "1/32f":
-                    return CupPerformance.RoundOfThirtyTwo;
-                default:
-                    return CupPerformance.Unknown;
-            }
+                "Vainqueur" => CupPerformance.Winner,
+                "Finale" => CupPerformance.Final,
+                "1/2f" => CupPerformance.SemiFinals,
+                "1/4f" => CupPerformance.QuarterFinals,
+                "1/8f" => CupPerformance.RoundOfEight,
+                "1/16f" => CupPerformance.RoundOfSixteen,
+                "1/32f" => CupPerformance.RoundOfThirtyTwo,
+                _ => CupPerformance.Unknown,
+            };
         }
     }
 }

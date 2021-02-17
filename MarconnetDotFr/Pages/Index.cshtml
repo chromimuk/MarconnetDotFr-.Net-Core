@@ -21,9 +21,27 @@
     <div class="website-category">
         <h1>SIDE PROJECTS</h1>
 
+        <div class="highlighted-side-project-section">
+            @foreach (var project in Model.HighlightedSideProjects)
+            {
+                <div class="homepage-item">
+                    <div class="homepage-item-logo">
+                        <img class="homepage-item-logo-img" data-src="@project.Image" alt="">
+                    </div>
+                    <div class="homepage-item-details">
+                        <div class="homepage-item-title workexp-item-company-info-name"><a asp-page="WorkExample" asp-route-title="@project.Alias">>> @project.Title</a></div>
+                        <div class="homepage-item-location"><span>@Html.Raw(@project.Description)</span></div>
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+            }
+        </div>
+
+        <div style="clear: both"></div>
+
         <div class="side-project-section">
 
-            @foreach (var item in Model.PersonalWork)
+            @foreach (var item in Model.SideProjects)
             {
                 <div class="side-project-section-item">
 
@@ -42,8 +60,7 @@
                                 </div>
                             </div>
                         </div>
-                    }
-
+                     }
                 </div>
             }
         </div>

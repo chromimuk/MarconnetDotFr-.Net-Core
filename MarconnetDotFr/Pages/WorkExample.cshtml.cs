@@ -22,7 +22,7 @@ namespace MarconnetDotFr.Pages
 
         public IActionResult OnGet(string title)
         {
-            IEnumerable<WorkItemModel> workItems = _resumeRepository.GetPersonalWork();
+            IEnumerable<WorkItemModel> workItems = _resumeRepository.GetSideProjects();
             IEnumerable<string> _availableWorks = workItems.Select(x => x.Alias);
 
             if (title == "idkcss")
