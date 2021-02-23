@@ -11,12 +11,12 @@
     <title>MarconnetDotFr</title>
 
     @* Style *@
-    <link rel="stylesheet" asp-append-version="true" href="~/lib/_lib.min.css" />
-    <link rel="stylesheet" asp-append-version="true" href="~/css/_site.min.css" />
+    <link defer rel="stylesheet" asp-append-version="true" href="~/css/generated/_site.min.css" />
+    @RenderSection("Styles", required: false)
 
     @* Script *@
-    <script asp-append-version="true" src="~/lib/_lib.min.js"></script>
-    <script asp-append-version="true" src="~/js/_site.min.js"></script>
+    <script defer asp-append-version="true" src="~/js/generated/lib/_jQuery.min.js"></script>
+    <script defer asp-append-version="true" src="~/js/generated/_site.min.js"></script>
 </head>
 <body>
 

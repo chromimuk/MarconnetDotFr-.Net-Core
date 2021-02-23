@@ -1,27 +1,46 @@
 ﻿[
+  ////////////////////////////////////////////////////////////////////////////////////////////////
   // CSS
   {
-    "outputFileName": "wwwroot/css/_site.min.css",
+    "outputFileName": "wwwroot/css/generated/_site.min.css",
     "inputFiles": [
-      "wwwroot/css/site.css"
+      "wwwroot/css/shared/site.css"
     ]
   },
   {
-    "outputFileName": "wwwroot/lib/_lib.min.css",
+    "outputFileName": "wwwroot/css/generated/_lastFMStats.min.css",
     "inputFiles": [
-      "wwwroot/lib/leaflet/leaflet.css",
-      "wwwroot/lib/kendo/styles/kendo.bootstrap-v4.css"
+      "wwwroot/css/lastFMStats.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/generated/_idkcss.min.css",
+    "inputFiles": [
+      "wwwroot/css/idkcss.css"
     ]
   },
 
+  /////////// CSS libraries
+  {
+    "outputFileName": "wwwroot/css/generated/lib/_kendo.min.css",
+    "inputFiles": [
+      "wwwroot/lib/kendo/styles/kendo.bootstrap-v4.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/generated/lib/_leaflet.min.css",
+    "inputFiles": [
+      "wwwroot/lib/leaflet/leaflet.css"
+    ]
+  },
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
   // JS
   {
-    "outputFileName": "wwwroot/js/_site.min.js",
+    "outputFileName": "wwwroot/js/generated/_site.min.js",
     "inputFiles": [
-      "wwwroot/js/models/coordinate.js",
-      "wwwroot/js/tools.js",
-      "wwwroot/js/map_helper.js",
-      "wwwroot/js/site.js"
+      "wwwroot/js/shared/tools.js",
+      "wwwroot/js/shared/site.js"
     ],
     "minify": {
       "enabled": true,
@@ -30,7 +49,7 @@
     "sourceMap": false
   },
   {
-    "outputFileName": "wwwroot/js/index/_index.min.js",
+    "outputFileName": "wwwroot/js/generated/_index.min.js",
     "inputFiles": [
       "wwwroot/js/index/dom_finder.js",
       "wwwroot/js/index/main.js"
@@ -42,14 +61,58 @@
     "sourceMap": false
   },
   {
-    "outputFileName": "wwwroot/lib/_lib.min.js",
+    "outputFileName": "wwwroot/js/generated/_idkcss.min.js",
     "inputFiles": [
-      "wwwroot/lib/jQuery/jQuery.js",
-      "wwwroot/lib/kendo/scripts/kendo.all.js",
-      "wwwroot/lib/kendo/scripts/kendo.aspnetmvc.js",
-      "wwwroot/lib/leaflet/leaflet.js",
       "wwwroot/lib/css-element-queries/resize-sensor.js",
       "wwwroot/lib/css-element-queries/element-queries.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/generated/_map.min.js",
+    "inputFiles": [
+      "wwwroot/js/map/models/coordinate.js",
+      "wwwroot/js/map/map_helper.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+
+  /////////// JS libraries
+  {
+    "outputFileName": "wwwroot/js/generated/lib/_jQuery.min.js",
+    "inputFiles": [
+      "wwwroot/lib/jQuery/jQuery.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/generated/lib/_leaflet.min.js",
+    "inputFiles": [
+      "wwwroot/lib/leaflet/leaflet.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/generated/lib/_kendo.min.js",
+    "inputFiles": [
+      "wwwroot/lib/kendo/scripts/kendo.all.js",
+      "wwwroot/lib/kendo/scripts/kendo.aspnetmvc.js"
     ],
     "minify": {
       "enabled": true,

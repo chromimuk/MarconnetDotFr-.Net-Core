@@ -4,6 +4,10 @@
 
 }
 
+@section Styles {
+    <link defer rel="stylesheet" asp-append-version="true" href="~/css/generated/lib/_leaflet.min.css" />
+}
+
 <div class="website-intro">
     <p>
         Hello, my name is Benjamin Marconnet and I'm @Model.CurrentAge years old. I'm from France and I currently live in Geneva (Switzerland).
@@ -60,7 +64,7 @@
                                 </div>
                             </div>
                         </div>
-                     }
+                    }
                 </div>
             }
         </div>
@@ -124,5 +128,7 @@
 </section>
 
 @section Scripts {
-    <script src="~/js/index/_index.min.js"></script>
+    <script defer asp-append-version="true" src="~/js/generated/lib/_leaflet.min.js"></script>
+    <script defer asp-append-version="true" src="~/js/generated/_map.min.js"></script>
+    <script defer asp-append-version="true" src="~/js/generated/_index.min.js"></script>
 }
