@@ -143,6 +143,8 @@ img {
     background-color: #131f31;
     padding: 10px;
     border-radius: 5px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .work-image-cover {

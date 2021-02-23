@@ -7,9 +7,10 @@
     ]
   },
   {
-    "outputFileName": "wwwroot/css/lib/_lib.min.css",
+    "outputFileName": "wwwroot/lib/_lib.min.css",
     "inputFiles": [
-      "wwwroot/js/lib/leaflet/leaflet.css"
+      "wwwroot/lib/leaflet/leaflet.css",
+      "wwwroot/lib/kendo/styles/kendo.bootstrap-v4.css"
     ]
   },
 
@@ -41,11 +42,14 @@
     "sourceMap": false
   },
   {
-    "outputFileName": "wwwroot/js/lib/_lib.min.js",
+    "outputFileName": "wwwroot/lib/_lib.min.js",
     "inputFiles": [
-      "wwwroot/js/lib/leaflet/leaflet.js",
-      "wwwroot/js/lib/element-queries.js",
-      "wwwroot/js/lib/resize-sensor.js"
+      "wwwroot/lib/jQuery/jQuery.js",
+      "wwwroot/lib/kendo/scripts/kendo.all.js",
+      "wwwroot/lib/kendo/scripts/kendo.aspnetmvc.js",
+      "wwwroot/lib/leaflet/leaflet.js",
+      "wwwroot/lib/css-element-queries/resize-sensor.js",
+      "wwwroot/lib/css-element-queries/element-queries.js"
     ],
     "minify": {
       "enabled": true,

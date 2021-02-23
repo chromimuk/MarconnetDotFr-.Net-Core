@@ -57,8 +57,8 @@
 
     function createRedIcon() {
         return new L.Icon({
-            iconUrl: 'js/lib/leaflet/images/marker-icon-red.png',
-            shadowUrl: 'js/lib/leaflet/images/marker-shadow.png',
+            iconUrl: 'lib/leaflet/images/marker-icon-red.png',
+            shadowUrl: 'lib/leaflet/images/marker-shadow.png',
             iconSize: [12, 20],
             iconAnchor: [6, 20],
             popupAnchor: [1, -34],
