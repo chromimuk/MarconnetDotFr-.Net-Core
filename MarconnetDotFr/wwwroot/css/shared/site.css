@@ -1,0 +1,290 @@
+﻿/* GENERAL */
+
+@font-face {
+    font-family: 'HomepageBaukasten';
+    src: url('../font/HomepageBaukasten-Book.ttf');
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    font-family: 'HomepageBaukasten';
+    background-color: #213654;
+    color: #fff;
+}
+
+.footer {
+    height: 20px;
+}
+
+a, a:active {
+    color: #D15252;
+}
+
+    a h1, a:active h1 {
+        color: #4B7FBF;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #4B7FBF;
+    }
+
+img {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+    img[data-src] {
+        opacity: 0;
+    }
+
+.s-show {
+    display: block;
+}
+
+.s-hidden {
+    display: none;
+}
+
+.website-title {
+    background: #131f31;
+    position: relative;
+    z-index: 1;
+    padding: 1% 20px;
+    text-align: center;
+}
+
+.website-smalltitle {
+    padding: 10px 20px;
+}
+
+.website-title a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.website-category {
+    margin-bottom: 25px;
+}
+
+.website-intro {
+    margin-bottom: 15px;
+}
+
+.website-body {
+    width: 83.33333%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+
+/* HOMEPAGE */
+.homepage-item {
+    width: 100%;
+    background-color: #131f31;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    min-height: 125px;
+}
+
+.homepage-item-logo {
+    width: 40%;
+    float: left;
+}
+
+.homepage-item-logo-img {
+    height: 100px;
+    padding: 12px;
+    border-radius: 15%;
+}
+
+.homepage-item-details {
+    width: 60%;
+    float: left;
+}
+
+.workexp-item-company-info-name, .uni-item-title {
+    margin-top: 10px;
+}
+
+.homepage-item-title {
+    font-size: 22px;
+}
+
+.homepage-item-location, .uni-location {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.homepage-item-details-note {
+    clear: both;
+    margin: 10px 10px 5px 0;
+    text-align: right;
+    font-size: 12px;
+    color: #D15252;
+}
+
+.side-project-item {
+    height: auto;
+}
+
+.side-project-item-content {
+    padding: 15px;
+}
+
+
+/* WORK EXAMPLE */
+
+.work-details {
+    background-color: #131f31;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.work-image-cover {
+    width: 100%;
+}
+
+@media only screen and (min-width: 400px) {
+    .homepage-item-title {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .homepage-item-title {
+        font-size: 26px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+    .homepage-item-title {
+        font-size: 28px;
+    }
+
+    .homepage-item-location, .uni-location {
+        font-size: 16px;
+    }
+
+    .work-screenshot {
+        width: 50%;
+        float: left;
+    }
+
+    .work-screenshot-alone {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    .s-show {
+        display: none;
+    }
+
+    .s-hidden {
+        display: block;
+    }
+
+    .website-category {
+        margin-bottom: 50px;
+    }
+
+    .work-info {
+        width: 100%;
+        padding: 0;
+    }
+
+    .work-info-name {
+        font-size: 28px;
+    }
+
+    .work-info-date {
+        width: 100%;
+        margin: 0;
+        float: left;
+    }
+
+    .work-description {
+        margin-top: 10px;
+        width: 100%;
+        padding: 0;
+    }
+
+    .homepage-item-logo {
+        width: 20%;
+    }
+
+    .homepage-item-details {
+        width: 80%;
+    }
+
+    .homepage-item-title {
+        font-size: 32px;
+    }
+
+    .homepage-item-location, .uni-location {
+        font-size: 20px;
+    }
+
+    #mapid {
+        height: 500px;
+        background-color: rgba(0, 0, 0, .125);
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+
+    .website-intro {
+        margin-bottom: 50px;
+    }
+
+    .website-body {
+        max-width: 1200px;
+    }
+
+    .side-project-section {
+        columns: 500px;
+    }
+
+    .side-project-section-item {
+        margin: 0 5%;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .website-category-experience {
+        width: 47%;
+        margin: 0 1.5%;
+        float: left;
+    }
+
+    .website-category-experience-education .homepage-item {
+        height: 150px;
+    }
+
+    .homepage-item-title {
+        font-size: 28px;
+    }
+
+    .homepage-item-logo {
+        width: 25%;
+    }
+
+    .homepage-item-details {
+        width: 75%;
+    }
+
+    .homepage-item-logo-img {
+        margin: 0 auto;
+        display: block;
+    }
+}

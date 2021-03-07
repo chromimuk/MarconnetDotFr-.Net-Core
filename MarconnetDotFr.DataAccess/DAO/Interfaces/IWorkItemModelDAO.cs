@@ -11,5 +11,9 @@
         string GetSubtitle();
 
         string GetDescription();
+
+        string GetImage();
+
+        bool GetIsHighlighted();
     }
 }

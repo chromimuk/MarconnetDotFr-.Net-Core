@@ -34,9 +34,9 @@ namespace MarconnetDotFr.Pages
                 seasons = _footyRepository.GetSeasons("fcsm").Reverse().ToList();
             }
 
-            NbLeagueTitleWon = seasons.Where(x => x.ranking == 1).Count();
-            NbCupWon = seasons.Where(x => x.coupedefrance == CupPerformance.Winner).Count() + seasons.Where(x => x.coupedelaligue == CupPerformance.Winner).Count();
-            NbEuropeanTitleWon = seasons.Where(x => x.europe == "Vainqueur").Count();
+            NbLeagueTitleWon = seasons.Count(x => x.ranking == 1);
+            NbCupWon = seasons.Count(x => x.coupedefrance == CupPerformance.Winner) + seasons.Count(x => x.coupedelaligue == CupPerformance.Winner);
+            NbEuropeanTitleWon = seasons.Count(x => x.europe == "Vainqueur");
         }
 
         public JsonResult OnPostRead()
@@ -60,8 +60,8 @@ namespace MarconnetDotFr.Pages
             }
 
             IList<DivisionCountModel> divisionCount = new List<DivisionCountModel>();
-            divisionCount.Add(item: new DivisionCountModel() { division = Division.D1, count = seasons.Where(x => x.division == Division.D1).Count() });
-            divisionCount.Add(item: new DivisionCountModel() { division = Division.D2, count = seasons.Where(x => x.division == Division.D2).Count() });
+            divisionCount.Add(item: new DivisionCountModel() { division = Division.D1, count = seasons.Count(x => x.division == Division.D1) });
+            divisionCount.Add(item: new DivisionCountModel() { division = Division.D2, count = seasons.Count(x => x.division == Division.D2) });
 
             return new JsonResult(divisionCount);
         }

@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System;
+using System.Xml.Linq;
 
 namespace MarconnetDotFr.Core.Helpers
 {
@@ -20,6 +21,20 @@ namespace MarconnetDotFr.Core.Helpers
             else
             {
                 return null;
+            }
+        }
+
+        public static bool GetBoolValue(XElement element, string name)
+        {
+            string strValue = GetValue(element, name);
+
+            if (bool.TryParse(strValue, out bool value))
+            {
+                return value;
+            }
+            else
+            {
+                throw new InvalidCastException("Could not convert value to boolean");
             }
         }
     }

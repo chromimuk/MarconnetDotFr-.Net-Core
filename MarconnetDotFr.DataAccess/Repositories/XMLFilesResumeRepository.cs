@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace MarconnetDotFr.DataAccess.Repositories
 {
-    public class XMLFilesResumeRepository : IResumeRepository
+    public class XmlFilesResumeRepository : IResumeRepository
     {
         private readonly string ResumeFile = "//xml//resume.xml";
         private readonly string PersonalWorkFile = "//xml//work.xml";
@@ -20,7 +20,7 @@ namespace MarconnetDotFr.DataAccess.Repositories
         private XDocument _resumeDoc = null;
         private XDocument _personalWorkDoc = null;
 
-        public XMLFilesResumeRepository(IHostingEnvironment hostingEnvironment)
+        public XmlFilesResumeRepository(IHostingEnvironment hostingEnvironment)
         {
             _hostingEnvironment = hostingEnvironment;
             LoadDocuments();
@@ -42,7 +42,7 @@ namespace MarconnetDotFr.DataAccess.Repositories
             }
         }
 
-        public IEnumerable<WorkItemModel> GetPersonalWork()
+        public IEnumerable<WorkItemModel> GetSideProjects()
         {
             IEnumerable<WorkItemModel> items = new List<WorkItemModel>();
             if (_isInitialized)

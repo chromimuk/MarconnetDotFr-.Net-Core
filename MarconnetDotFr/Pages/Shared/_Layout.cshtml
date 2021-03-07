@@ -6,41 +6,30 @@
     <meta name="description" content="Benjamin Marconnet's website" />
     <meta name="keywords" content="Marconnet, Benjamin Marconnet" />
     <meta name="author" content="Benjamin Marconnet" />
-    <meta name="theme-color" content="#141414" />
+    <meta name="theme-color" content="#131F31" />
 
     <title>MarconnetDotFr</title>
-    <link rel="stylesheet" href="~/css/site.css" />
 
-    <link href="https://kendo.cdn.telerik.com/2021.1.119/styles/kendo.bootstrap-v4.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://kendo.cdn.telerik.com/2021.1.119/js/jquery.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2021.1.119/js/kendo.all.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2021.1.119/js/kendo.aspnetmvc.min.js"></script>
+    @* Style *@
+    <link defer rel="stylesheet" asp-append-version="true" href="~/css/generated/_site.min.css" />
+    @RenderSection("Styles", required: false)
+
+    @* Script *@
+    <script defer asp-append-version="true" src="~/js/generated/lib/_jQuery.min.js"></script>
+    <script defer asp-append-version="true" src="~/js/generated/_site.min.js"></script>
 </head>
 <body>
 
     <div class="website-category website-title">
-        <a href="@Url.Action("Index")">
-            <h1>
-                <span>B</span><span>E</span><span class="website-title-redacted">_</span><span>N</span><span class="website-title-redacted">_</span>
-                <span>J</span><span>A</span>
-                <br />
-                <span class="website-title-redacted">_</span><span>M</span><span class="website-title-redacted">_</span><span>I</span><span>N</span><span class="website-title-redacted">_</span><span>M</span>
-                <br />
-                <span>A</span><span class="website-title-redacted">_</span><span class="website-title-redacted">_</span><span>R</span><span class="website-title-redacted">_</span><span>C</span><span>O</span>
-                <br />
-                <span>N</span><span class="website-title-redacted">_</span><span>N</span>
-                <span>E</span><span class="website-title-redacted">_</span><span class="website-title-redacted">_</span><span>T</span>
-            </h1>
-        </a>
+        <a asp-page="Index">Benjamin Marconnet</a>
     </div>
 
     <div class="website-body">
         @RenderBody()
     </div>
 
-    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
     @RenderSection("Scripts", required: false)
+
+    <div class="footer"></div>
 </body>
 </html>

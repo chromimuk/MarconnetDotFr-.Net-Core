@@ -4,93 +4,131 @@
 
 }
 
-<p>
-    Hello, my name is Benjamin Marconnet and I'm @Model.CurrentAge years old. I'm from France and I currently live in Geneva (Switzerland).
-    I graduated from an engineering school a couple of years ago, where I studied software engineering.
-    Since then, I mostly worked as a C#/.NET developer.
-</p>
-<p>
-    My Github is <a href="https://github.com/chromimuk">here</a>, and my CV is avalaible <a href="~/pdf/EN___Resume_2021.pdf">as a PDF here</a>.
-    You can contact me at <a href="mailto:benjamin@marconnet.fr">benjamin@marconnet.fr</a>.
-    Thank you for visiting!
-</p>
+@section Styles {
+    <link defer rel="stylesheet" asp-append-version="true" href="~/css/generated/lib/_leaflet.min.css" />
+}
 
-
-
-<section>
-    <div class="website-category">
-        <h1>EXPERIENCES</h1>
-        <h2>Companies I had the chance to work with</h2>
-
-        @foreach (var exp in Model.WorkExperiences)
-        {
-        <div class="work-experience">
-            <div class="work-experience-content">
-                <div class="company-logo">
-                    <img data-src="@exp.Image" alt="" />
-                </div>
-                <div class="company-info">
-                    <div class="company-info-name">@exp.Title</div>
-                    <div class="company-info-date">@exp.Location</div>
-                </div>
-                <div class="company-description">
-                    <span>@exp.Description</span>
-                    <span><b>Technologies used:</b> @exp.Tech</span>
-                </div>
-            </div>
-        </div>
-        }
-    </div>
-</section>
+<div class="website-intro">
+    <p>
+        Hello, my name is Benjamin Marconnet and I'm @Model.CurrentAge years old. I'm from France and I currently live in Geneva (Switzerland).
+        I graduated from an engineering school a couple of years ago, where I studied software engineering.
+        Since then, I mostly worked as a C#/.NET developer.
+    </p>
+    <p>
+        My Github is <a href="https://github.com/chromimuk">here</a>, and my CV is avalaible <a href="~/pdf/EN___Resume_2021.pdf">as a PDF here</a>.
+        You can contact me at <a href="mailto:benjamin@marconnet.fr">benjamin@marconnet.fr</a>.
+        Thank you for visiting!
+    </p>
+</div>
 
 <section>
     <div class="website-category">
-        <h1>EDUCATION</h1>
-        <h2>Degrees obtained</h2>
+        <h1>SIDE PROJECTS</h1>
 
-        @foreach (var diploma in Model.UniversityDiplomas)
-        {
-        <div class="work-experience">
-            <div class="work-experience-content">
-                <div class="company-logo">
-                    <img data-src="@diploma.Image" alt="" />
-                </div>
-                <div class="company-info">
-                    <div class="company-info-name s-hidden">@Html.Raw(@diploma.Title)</div>
-                    <div class="company-info-name s-show">@Html.Raw(@diploma.ShortTitle)</div>
-                    <div class="company-info-date university-info-date s-hidden">@diploma.Location</div>
-                    <div class="company-info-date s-show">@diploma.ShortLocation</div>
-                </div>
-
-                <div class="company-description university-description">
-                    <span>@diploma.Description</span>
-                </div>
-            </div>
-        </div>
-        }
-    </div>
-</section>
-
-<section>
-    <div class="website-category">
-        <h1>WORK</h1>
-        <h2>Horsin' around in my free time</h2>
-
-        @foreach (var item in Model.PersonalWork)
-        {
-        <div class="work-experience">
-            <div class="work-experience-content">
-                <div class="company-info work-info">
-                    <div class="company-info-name work-info-name">
-                        <a asp-page="WorkExample" asp-route-title="@item.Alias">>> @item.Title</a>
+        <div class="highlighted-side-project-section">
+            @foreach (var project in Model.HighlightedSideProjects)
+            {
+                <div class="homepage-item">
+                    <div class="homepage-item-logo">
+                        <img class="homepage-item-logo-img" data-src="@project.Image" alt="">
                     </div>
-                    <div class="company-info-date work-info-date">@item.Subtitle</div>
+                    <div class="homepage-item-details">
+                        <div class="homepage-item-title workexp-item-company-info-name"><a asp-page="WorkExample" asp-route-title="@project.Alias">>> @project.Title</a></div>
+                        <div class="homepage-item-location"><span>@Html.Raw(@project.Description)</span></div>
+                    </div>
+                    <div style="clear: both"></div>
                 </div>
-                <div class="company-description work-description">
-                    <span>@Html.Raw(@item.Description)</span>
-                </div>
-            </div>
+            }
         </div>
-        }
+
+        <div style="clear: both"></div>
+
+        <div class="side-project-section">
+
+            @foreach (var item in Model.SideProjects)
+            {
+                <div class="side-project-section-item">
+
+                    <h2>@item.Key</h2>
+
+                    @foreach (var i in item)
+                    {
+                        <div class="homepage-item side-project-item">
+                            <div class="side-project-item-content">
+                                <div class="homepage-item-title">
+                                    <a asp-page="WorkExample" asp-route-title="@i.Alias">>> @i.Title</a>
+                                </div>
+                                <br />
+                                <div style="width:100%" class="">
+                                    <span>@Html.Raw(@i.Description)</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+
+        <div style="clear: both"></div>
     </div>
 </section>
+
+<section>
+
+    <div class="website-category">
+
+        <h1>EXPERIENCES</h1>
+
+        <div>
+            <div id="mapid"></div>
+        </div>
+
+        <div class="website-category-experiences">
+
+            <div class="website-category-experience">
+                <h2>WORK</h2>
+                @foreach (var exp in Model.WorkExperiences)
+                {
+                    <div class="homepage-item">
+                        <div class="homepage-item-logo">
+                            <img class="homepage-item-logo-img" data-src="@exp.Image" alt="">
+                        </div>
+                        <div class="homepage-item-details">
+                            <div class="homepage-item-title workexp-item-company-info-name">@exp.Title</div>
+                            <div class="homepage-item-location">@exp.Location</div>
+                            <div class="homepage-item-details-note">
+                                <span>@exp.Note</span>
+                            </div>
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                }
+            </div>
+
+            <div class="website-category-experience website-category-experience-education">
+                <h2>EDUCATION</h2>
+                @foreach (var diploma in Model.UniversityDiplomas)
+                {
+                    <div class="homepage-item">
+                        <div class="homepage-item-logo">
+                            <img class="homepage-item-logo-img" data-src="@diploma.Image" alt="">
+                        </div>
+                        <div class="homepage-item-details">
+                            <div class="homepage-item-title uni-item-title s-hidden">@diploma.Title</div>
+                            <div class="homepage-item-title uni-item-title s-show">@diploma.ShortTitle</div>
+                            <div class="homepage-item-location uni-location s-hidden">@diploma.Location</div>
+                            <div class="homepage-item-location uni-location s-show">@diploma.ShortLocation</div>
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script defer asp-append-version="true" src="~/js/generated/lib/_leaflet.min.js"></script>
+    <script defer asp-append-version="true" src="~/js/generated/_map.min.js"></script>
+    <script defer asp-append-version="true" src="~/js/generated/_index.min.js"></script>
+}

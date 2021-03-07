@@ -1,4 +1,5 @@
-﻿using MarconnetDotFr.DataAccess.DAO.Interfaces;
+﻿using MarconnetDotFr.Core.Helpers;
+using MarconnetDotFr.DataAccess.DAO.Interfaces;
 using System.Xml.Linq;
 
 namespace MarconnetDotFr.DataAccess.DAO
@@ -14,27 +15,37 @@ namespace MarconnetDotFr.DataAccess.DAO
 
         public string GetAlias()
         {
-            return _element.Element("alias").Value;
+            return XmlHelper.GetValue(_element, "alias");
         }
 
         public string GetDescription()
         {
-            return _element.Element("description").Value;
+            return XmlHelper.GetValue(_element, "description");
         }
 
         public string GetLink()
         {
-            return _element.Element("link").Value;
+            return XmlHelper.GetValue(_element, "link");
         }
 
         public string GetSubtitle()
         {
-            return _element.Element("subtitle").Value;
+            return XmlHelper.GetValue(_element, "subtitle");
         }
 
         public string GetTitle()
         {
-            return _element.Element("title").Value;
+            return XmlHelper.GetValue(_element, "title");
+        }
+
+        public string GetImage()
+        {
+            return XmlHelper.GetValue(_element, "image");
+        }
+
+        public bool GetIsHighlighted()
+        {
+            return XmlHelper.GetBoolValue(_element, "isHighlighted");
         }
     }
 }

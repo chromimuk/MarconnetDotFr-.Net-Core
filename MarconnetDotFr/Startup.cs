@@ -25,7 +25,7 @@ namespace MarconnetDotFr
             services.AddRazorPages();
             services.AddKendo();
 
-            services.AddScoped<IResumeRepository, XMLFilesResumeRepository>();
+            services.AddScoped<IResumeRepository, XmlFilesResumeRepository>();
             services.AddScoped<IWorkRepository, XmlFilesWorkRepository>();
             services.AddScoped<IFootyRepository, XmlFilesFootyRepository>();
 

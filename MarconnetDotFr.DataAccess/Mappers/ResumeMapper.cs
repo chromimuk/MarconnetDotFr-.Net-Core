@@ -15,7 +15,8 @@ namespace MarconnetDotFr.DataAccess.Mappers
                 Location = dao.GetLocation(),
                 ShortLocation = dao.GetShortLocation(),
                 Description = dao.GetDescription(),
-                Tech = dao.GetTech()
+                Tech = dao.GetTech(),
+                Note = dao.GetNote()
             };
         }
 
@@ -27,7 +28,9 @@ namespace MarconnetDotFr.DataAccess.Mappers
                 Alias = dao.GetAlias(),
                 Description = dao.GetDescription(),
                 Link = dao.GetLink(),
-                Subtitle = dao.GetSubtitle()
+                Subtitle = dao.GetSubtitle(),
+                Image = dao.GetImage(),
+                IsHighlighted = dao.GetIsHighlighted()
             };
         }
 

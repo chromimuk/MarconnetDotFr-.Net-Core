@@ -7,6 +7,10 @@
 @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
 @Html.AntiForgeryToken()
 
+@section Styles {
+    <link defer rel="stylesheet" asp-append-version="true" href="~/css/generated/lib/_kendo.min.css" />
+}
+
 <style>
     .website-body {
         max-width: none

@@ -40,48 +40,32 @@ namespace MarconnetDotFr.Core.Models.FootyStats
         {
             int countCupPerformance = Enum.GetNames(typeof(CupPerformance)).Length;
 
-            switch (cupPerformance)
+            return cupPerformance switch
             {
-                case CupPerformance.Winner:
-                    return countCupPerformance;
-                case CupPerformance.Final:
-                    return countCupPerformance - 1;
-                case CupPerformance.SemiFinals:
-                    return countCupPerformance - 2;
-                case CupPerformance.QuarterFinals:
-                    return countCupPerformance - 3;
-                case CupPerformance.RoundOfEight:
-                    return countCupPerformance - 4;
-                case CupPerformance.RoundOfSixteen:
-                    return countCupPerformance - 5;
-                case CupPerformance.RoundOfThirtyTwo:
-                    return countCupPerformance - 6;
-                default:
-                    return null;
-            }
+                CupPerformance.Winner => countCupPerformance,
+                CupPerformance.Final => countCupPerformance - 1,
+                CupPerformance.SemiFinals => countCupPerformance - 2,
+                CupPerformance.QuarterFinals => countCupPerformance - 3,
+                CupPerformance.RoundOfEight => countCupPerformance - 4,
+                CupPerformance.RoundOfSixteen => countCupPerformance - 5,
+                CupPerformance.RoundOfThirtyTwo => countCupPerformance - 6,
+                _ => null,
+            };
         }
 
         private string ToStrCupPerformance(CupPerformance cupPerformance)
         {
-            switch (cupPerformance)
+            return cupPerformance switch
             {
-                case CupPerformance.Winner:
-                    return "Vainqueur";
-                case CupPerformance.Final:
-                    return "Finaliste";
-                case CupPerformance.SemiFinals:
-                    return "Demi-finaliste";
-                case CupPerformance.QuarterFinals:
-                    return "Quart-de-finaliste";
-                case CupPerformance.RoundOfEight:
-                    return "8eme de finale";
-                case CupPerformance.RoundOfSixteen:
-                    return "16eme de finale";
-                case CupPerformance.RoundOfThirtyTwo:
-                    return "32eme de finale";
-                default:
-                    return null;
-            }
+                CupPerformance.Winner => "Vainqueur",
+                CupPerformance.Final => "Finaliste",
+                CupPerformance.SemiFinals => "Demi-finaliste",
+                CupPerformance.QuarterFinals => "Quart-de-finaliste",
+                CupPerformance.RoundOfEight => "8eme de finale",
+                CupPerformance.RoundOfSixteen => "16eme de finale",
+                CupPerformance.RoundOfThirtyTwo => "32eme de finale",
+                _ => null,
+            };
         }
     }
 

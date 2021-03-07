@@ -14,7 +14,9 @@
     var FavouriteTrack = TopTracksResults?.First();
 }
 
-<link href="~/css/lastFMStats.css" rel="stylesheet" />
+@section Styles {
+    <link defer href="~/css/generated/_lastFMStats.min.css" rel="stylesheet" />
+}
 
 @if (Model.ErrorMessage != null)
 {
