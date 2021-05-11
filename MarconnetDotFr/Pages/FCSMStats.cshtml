@@ -1,0 +1,288 @@
+﻿@page
+@model MarconnetDotFr.Pages.FCSMStatsModel
+@{
+}
+
+@using Kendo.Mvc.UI
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@Html.AntiForgeryToken()
+
+<script asp-append-version="true" src="~/js/generated/lib/_kendo.min.js"></script>
+
+@section Styles {
+    <link defer rel="stylesheet" asp-append-version="true" href="~/css/generated/lib/_kendo.min.css" />
+}
+
+<style>
+    .website-body {
+        max-width: none
+    }
+
+    .percent50 {
+        width: 50%;
+        float: left;
+    }
+
+    .percent70 {
+        width: 70%;
+        float: left;
+    }
+
+    .percent30 {
+        width: 30%;
+        float: left;
+    }
+
+    .clearBoth {
+        clear: both;
+    }
+
+    .stats-item {
+        width: 100%;
+        background-color: #131f31;
+        color: #fff;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        min-height: 125px;
+    }
+
+        .stats-item .stats-item-header {
+            padding: 10px;
+        }
+
+    .banner {
+        width: 100%;
+        background-color: #131f31;
+        margin-bottom: 20px;
+        height: 220px;
+    }
+
+        .banner img {
+            height: 200px;
+            margin: 0 auto;
+        }
+</style>
+
+
+<div class="text-center">
+
+    <div class="banner">
+        <div class="homepage-item-logo">
+            <img class="homepage-item-logo-img" alt="" src="~/img/fcsm/logo.png">
+        </div>
+        <div class="homepage-item-details">
+            <h1>Football Club Sochaux-Montbéliard</h1>
+            <div>
+                <p>Depuis 1928</p>
+                <p>Stade Auguste-Bonal, Impasse de la Forge, 25200 Montbéliard (France)</p>
+            </div>
+        </div>
+        <div class="clearBoth"></div>
+    </div>
+
+    <div class="stats-item">
+
+        <div class="stats-item-header">
+            <h1>Classement en championnat</h1>
+            <div>
+                <p>@Model.NbSeason saisons jouées, dont @Model.NbSeasonInTopLeague dans l'élite.</p>
+            </div>
+        </div>
+
+        <div>
+            <div class="percent70">
+
+                @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.SeasonModel>()
+                    .Name("Ranking")
+                    .Title("FCSM - Classement en championnat")
+                    .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
+                    .Series(series => {
+                        series.Line(model => model.rankingForChart).CategoryField("season").Color("#133478").Axis("rankingForChart").MissingValues(ChartSeriesMissingValues.Gap);
+                    })
+                    .CategoryAxis(axis => axis
+                        .MajorGridLines(lines => lines.Visible(false))
+                        .Labels(l => l.Step(10))
+                        .Justify(true)
+                    )
+                    .ValueAxis(axis => axis.Numeric("rankingForChart").Min(00).Max(41).Visible(false).PlotBands(b => b.Add().From(0).To(20).Color("#f5f5f5").Opacity(0.8)))
+                    .Tooltip(tooltip => tooltip.Visible(true).Template("#= dataItem.strDivision # - #= dataItem.ranking #"))
+                )
+            </div>
+
+            <div class="percent30">
+
+                @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.DivisionCountModel>()
+                .Name("Division")
+                .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=ReadDivision").Data("forgeryToken")))
+                .SeriesColors(new string[] { "#133478", "#fad84a" })
+                .Series(series =>  {
+                    series.Pie(model => model.count, model => model.strDivision)
+                    .Labels(labels => labels
+                        .Visible(true)
+                        .Template("#= dataItem.count # saisons en #= dataItem.strDivision #")
+                    );
+                })
+            )
+
+
+            </div>
+
+        </div>
+
+        <div class="clearBoth"></div>
+
+        <div class="stats-item-header">
+            <p>La partie blanche du graphique représente la première division, celle en grise la deuxième division.</p>
+        </div>
+
+    </div>
+
+
+    <div class="stats-item clearBoth">
+
+        <div class="stats-item-header">
+            <h1>Performances en coupe</h1>
+            <div>
+                <p>@Model.NbSeason saisons jouées, dont @Model.NbSeasonInTopLeague dans l'élite.</p>
+                <p>@Model.NbLeagueTitleWon titres nationaux et @Model.NbCupWon coupes gagnés.</p>
+            </div>
+        </div>
+
+        <div class="percent50">
+            <div>
+                @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.SeasonModel>()
+                    .Name("CoupeDeFrance")
+                    .Title("FCSM - Performances en Coupe de France")
+                    .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
+                    .Series(series => {
+                        series.Line(model => model.coupeDeFranceForChart).CategoryField("season").Color("#133478").Axis("coupeDeFranceForChart").MissingValues(ChartSeriesMissingValues.Gap);
+                    })
+                    .CategoryAxis(axis => axis
+                        .MajorGridLines(lines => lines.Visible(false))
+                        .Labels(l => l.Step(10))
+                        .Justify(true)
+                    )
+                    .ValueAxis(axis => axis.Numeric("coupeDeFranceForChart").Min(1).Max(9).MajorUnit(1).Color("#73c100").Labels(x => x.Template(
+                        @"#if (value == 8){#
+                            Vainqueur
+                        #}else if (value == 7){#
+                            Finaliste
+                        #}else if (value == 6){#
+                            1/2
+                        #}else if (value == 5){#
+                            1/4
+                        #}else if (value == 4){#
+                            1/8
+                        #}else if (value == 3){#
+                            1/16
+                        #}else if (value == 2){#
+                            1/32
+                        #}else {}#"
+                    )))
+                    .Tooltip(tooltip => tooltip.Visible(true).Template("#= dataItem.strCoupeDeFrance #")
+                ))
+            </div>
+        </div>
+        <div class="percent50">
+            <div>
+                @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.SeasonModel>()
+                    .Name("CoupeDeLaLigue")
+                    .Title("FCSM - Performances en Coupe de la Ligue")
+                    .DataSource(ds => ds.Read(r => r.Url("/FCSMStats?handler=ReadCoupeDeLaLigue").Data("forgeryToken")))
+                    .Series(series => {
+                        series.Line(model => model.coupeDeLaLigueForChart).CategoryField("season").Color("#133478").Axis("coupeDeFranceForChart").MissingValues(ChartSeriesMissingValues.Gap);
+                    })
+                    .CategoryAxis(axis => axis
+                        .MajorGridLines(lines => lines.Visible(false))
+                        .Labels(l => l.Step(5))
+                        .Justify(true)
+                    )
+                    .ValueAxis(axis => axis.Numeric("coupeDeFranceForChart").Min(1).Max(9).MajorUnit(1).Color("#73c100").Labels(x => x.Template(
+                        @"#if (value == 8){#
+                            Vainqueur
+                        #}else if (value == 7){#
+                            Finaliste
+                        #}else if (value == 6){#
+                            1/2
+                        #}else if (value == 5){#
+                            1/4
+                        #}else if (value == 4){#
+                            1/8
+                        #}else if (value == 3){#
+                            1/16
+                        #}else if (value == 2){#
+                            1/32
+                        #}else {}#"
+                    )))
+                    .Tooltip(tooltip => tooltip.Visible(true).Template("#= dataItem.strCoupeDeLaLigue #")
+                ))
+            </div>
+        </div>
+        <div class="clearBoth"></div>
+    </div>
+
+    <div class="stats-item">
+
+        <div class="stats-item-header">
+            <h1>Affluence</h1>
+            <p>Le "nouveau Bonal" a été inauguré le 22 juillet 2000, à l'occasion du Trophée des champions opposant le FC Nantes à l'AS Monaco.</p>
+        </div>
+
+        <div class="clearBoth">
+            @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.SeasonModel>()
+            .Name("Attendance")
+            .Title("FCSM - Affluence")
+            .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
+            .Series(series => {
+                series.Area(model => model.attendance).Name("Affluence moyenne").CategoryField("season").Color("#007eff").Axis("season")
+                    .NoteTextField("notes")
+                    .Notes(notes => notes.Label(label => label.Position(ChartNoteLabelPosition.Outside)).Position(ChartNotePosition.Left));
+            })
+            .CategoryAxis(axis => axis
+                .MajorGridLines(lines => lines.Visible(false))
+                .Labels(l => l.Step(10))
+                .Justify(true)
+            )
+            .ValueAxis(axis => axis.Numeric("season").Labels(l => l.Step(1)))
+            .Tooltip(tooltip => tooltip.Visible(true).Format("{0:N0}")
+            )
+        )
+        </div>
+    </div>
+
+    <div class="stats-item">
+
+        <div class="stats-item-header">
+            <h1>Classement en championnat et affluence</h1>
+            <p>Les performances de l'équipe ont-elles une influence sur les affluences ?</p>
+        </div>
+
+        <div>
+            @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.SeasonModel>()
+            .Name("RankingAndAttendance")
+            .Title("FCSM - Classement et affluence")
+            .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
+            .Series(series => {
+                series.Area(model => model.attendance).Name("Affluence moyenne").CategoryField("season").Color("#007eff").Axis("season");
+                series.Line(model => model.rankingForChart).Name("Classement").CategoryField("season").Color("#133478").Axis("rankingForChart").MissingValues(ChartSeriesMissingValues.Gap);
+            })
+            .CategoryAxis(axis => axis
+                .MajorGridLines(lines => lines.Visible(false))
+                .Labels(l => l.Step(10))
+                .Justify(true)
+            )
+            .ValueAxis(axis => axis.Numeric("season").Labels(l => l.Step(1)))
+            .ValueAxis(axis => axis.Numeric("rankingForChart").Color("#73c100").Min(00).Max(41).Visible(false).PlotBands(b => b.Add().From(0).To(20).Color("#f5f5f5").Opacity(0.8)))
+            .Tooltip(tooltip => tooltip.Visible(true).Template("#= dataItem.strDivision # - #= dataItem.ranking #"))
+        )
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function forgeryToken() {
+            return kendo.antiForgeryTokens();
+        }
+    </script>
+}

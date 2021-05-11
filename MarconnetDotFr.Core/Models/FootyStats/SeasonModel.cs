@@ -55,17 +55,19 @@ namespace MarconnetDotFr.Core.Models.FootyStats
 
         private string ToStrCupPerformance(CupPerformance cupPerformance)
         {
-            return cupPerformance switch
+            var strCupPerformance = cupPerformance switch
             {
                 CupPerformance.Winner => "Vainqueur",
                 CupPerformance.Final => "Finaliste",
                 CupPerformance.SemiFinals => "Demi-finaliste",
-                CupPerformance.QuarterFinals => "Quart-de-finaliste",
-                CupPerformance.RoundOfEight => "8eme de finale",
-                CupPerformance.RoundOfSixteen => "16eme de finale",
-                CupPerformance.RoundOfThirtyTwo => "32eme de finale",
+                CupPerformance.QuarterFinals => "1/4 de finale",
+                CupPerformance.RoundOfEight => "1/8 de finale",
+                CupPerformance.RoundOfSixteen => "1/16 de finale",
+                CupPerformance.RoundOfThirtyTwo => "1/32 de finale",
                 _ => null,
             };
+
+            return $"{season} - {strCupPerformance}";
         }
     }
 

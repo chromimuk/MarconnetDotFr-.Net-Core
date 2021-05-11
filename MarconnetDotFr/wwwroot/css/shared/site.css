@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'HomepageBaukasten';
-    src: url('../font/HomepageBaukasten-Book.ttf');
+    src: url('../../font/HomepageBaukasten-Book.ttf');
     font-display: swap;
 }
 
@@ -11,6 +11,10 @@ body {
     font-family: 'HomepageBaukasten';
     background-color: #213654;
     color: #fff;
+}
+
+h2 {
+    margin-top: 0;
 }
 
 .footer {
@@ -135,6 +139,7 @@ img {
 
 .side-project-item-content {
     padding: 15px;
+    break-inside: avoid;
 }
 
 

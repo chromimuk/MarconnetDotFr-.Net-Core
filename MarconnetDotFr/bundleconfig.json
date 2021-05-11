@@ -24,6 +24,7 @@
   {
     "outputFileName": "wwwroot/css/generated/lib/_kendo.min.css",
     "inputFiles": [
+      "wwwroot/lib/kendo/styles/kendo.common.css",
       "wwwroot/lib/kendo/styles/kendo.bootstrap-v4.css"
     ]
   },

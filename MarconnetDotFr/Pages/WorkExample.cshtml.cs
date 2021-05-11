@@ -29,6 +29,10 @@ namespace MarconnetDotFr.Pages
             {
                 return RedirectToPage("IdkCss");
             }
+            else if (title == "footystats")
+            {
+                return RedirectToPage("footystats");
+            }
             else if (_availableWorks.Contains(title))
             {
                 WorkModel = _workRepository.GetWorkModel(title);

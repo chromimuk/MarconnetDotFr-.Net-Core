@@ -54,6 +54,19 @@
   </work>
 
   <work>
+    <title>Football statistics</title>
+    <alias>footystats</alias>
+    <link>footystats</link>
+    <subtitle>Web development</subtitle>
+    <description>
+      <![CDATA[
+          Data analysis of some football clubs: what are their league ranking history? How many trophies did they get? Did the team performance had an influence on the attendance?
+				]]>
+    </description>
+    <isHighlighted>false</isHighlighted>
+  </work>
+
+  <work>
     <title>Cinéma Le Colisée</title>
     <alias>colisee</alias>
     <link>colisee</link>
