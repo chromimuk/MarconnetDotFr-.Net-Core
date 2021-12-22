@@ -340,3 +340,4 @@ ASALocalRun/
 healthchecksdb
 /MarconnetDotFr/wwwroot/css/**/*.min.css
 /MarconnetDotFr/wwwroot/js/**/*.min.js
+/MarconnetDotFr/wwwroot/img/jandb
