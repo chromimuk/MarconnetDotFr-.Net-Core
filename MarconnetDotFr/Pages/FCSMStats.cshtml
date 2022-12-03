@@ -118,7 +118,7 @@
                 .Series(series =>  {
                     series.Pie(model => model.count, model => model.strDivision)
                     .Labels(labels => labels
-                        .Visible(true)
+                        .Visible(false)
                         .Template("#= dataItem.count # saisons en #= dataItem.strDivision #")
                     );
                 })
