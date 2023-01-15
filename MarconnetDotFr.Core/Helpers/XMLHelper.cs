@@ -37,5 +37,19 @@ namespace MarconnetDotFr.Core.Helpers
                 throw new InvalidCastException("Could not convert value to boolean");
             }
         }
+
+        public static DateTime GetDateValue(XElement element, string name)
+        {
+            string strValue = GetValue(element, name);
+
+            if (DateTime.TryParse(strValue, out DateTime value))
+            {
+                return value;
+            }
+            else
+            {
+                throw new InvalidCastException("Could not convert value to datime");
+            }
+        }
     }
 }

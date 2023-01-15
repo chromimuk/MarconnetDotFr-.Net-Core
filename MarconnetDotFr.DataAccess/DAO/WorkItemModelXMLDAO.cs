@@ -1,51 +1,47 @@
-﻿using MarconnetDotFr.Core.Helpers;
-using MarconnetDotFr.DataAccess.DAO.Interfaces;
+﻿using MarconnetDotFr.DataAccess.DAO.Interfaces;
 using System.Xml.Linq;
 
 namespace MarconnetDotFr.DataAccess.DAO
 {
-    public class WorkItemModelXmlDao : IWorkItemModelDao
+    public class WorkItemModelXmlDao : XmlDao, IWorkItemModelDao
     {
-        private readonly XElement _element;
-
-        public WorkItemModelXmlDao(XElement e)
+        public WorkItemModelXmlDao(XElement e) : base(e)
         {
-            _element = e;
         }
 
         public string GetAlias()
         {
-            return XmlHelper.GetValue(_element, "alias");
+            return GetStringValue("alias");
         }
 
         public string GetDescription()
         {
-            return XmlHelper.GetValue(_element, "description");
+            return GetStringValue("description");
         }
 
         public string GetLink()
         {
-            return XmlHelper.GetValue(_element, "link");
+            return GetStringValue("link");
         }
 
         public string GetSubtitle()
         {
-            return XmlHelper.GetValue(_element, "subtitle");
+            return GetStringValue("subtitle");
         }
 
         public string GetTitle()
         {
-            return XmlHelper.GetValue(_element, "title");
+            return GetStringValue("title");
         }
 
         public string GetImage()
         {
-            return XmlHelper.GetValue(_element, "image");
+            return GetStringValue("image");
         }
 
         public bool GetIsHighlighted()
         {
-            return XmlHelper.GetBoolValue(_element, "isHighlighted");
+            return GetBoolValue("isHighlighted");
         }
     }
 }

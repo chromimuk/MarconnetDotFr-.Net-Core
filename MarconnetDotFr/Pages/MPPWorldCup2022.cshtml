@@ -1,0 +1,16 @@
+﻿@page
+@model MarconnetDotFr.Pages.MPPWorldCup2022Model
+@{
+}
+
+@using Kendo.Mvc.UI
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@Html.AntiForgeryToken()
+
+<script asp-append-version="true" src="~/js/generated/lib/_kendo.min.js"></script>
+
+@section Styles {
+    <link defer rel="stylesheet" asp-append-version="true" href="~/css/generated/lib/_kendo.min.css" />
+    <link defer rel="stylesheet" asp-append-version="true" href="/css/footystats.css" />
+}
+

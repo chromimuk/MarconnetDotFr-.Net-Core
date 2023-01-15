@@ -1,56 +1,52 @@
-﻿using MarconnetDotFr.Core.Helpers;
-using MarconnetDotFr.DataAccess.DAO.Interfaces;
+﻿using MarconnetDotFr.DataAccess.DAO.Interfaces;
 using System.Xml.Linq;
 
 namespace MarconnetDotFr.DataAccess.DAO
 {
-    public class ResumeItemModelXmlDao : IResumeItemModelDao
+    public class ResumeItemModelXmlDao : XmlDao, IResumeItemModelDao
     {
-        private readonly XElement _element;
-
-        public ResumeItemModelXmlDao(XElement e)
+        public ResumeItemModelXmlDao(XElement e) : base(e)
         {
-            _element = e;
         }
 
         public string GetDescription()
         {
-            return XmlHelper.GetValue(_element, "description");
+            return GetStringValue("description");
         }
 
         public string GetLocation()
         {
-            return XmlHelper.GetValue(_element, "location");
+            return GetStringValue("location");
         }
 
         public string GetShortLocation()
         {
-            return XmlHelper.GetValue(_element, "short-location");
+            return GetStringValue("short-location");
         }
 
         public string GetTitle()
         {
-            return XmlHelper.GetValue(_element, "title");
+            return GetStringValue("title");
         }
 
         public string GetShortTitle()
         {
-            return XmlHelper.GetValue(_element, "short-title");
+            return GetStringValue("short-title");
         }
 
         public string GetImage()
         {
-            return XmlHelper.GetValue(_element, "image");
+            return GetStringValue("image");
         }
 
         public string GetTech()
         {
-            return XmlHelper.GetValue(_element, "tech");
+            return GetStringValue("tech");
         }
 
         public string GetNote()
         {
-            return XmlHelper.GetValue(_element, "note");
+            return GetStringValue("note");
         }
     }
 }

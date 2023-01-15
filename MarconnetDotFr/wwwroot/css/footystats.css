@@ -1,0 +1,47 @@
+﻿.website-body {
+    max-width: none
+}
+
+.percent50 {
+    width: 50%;
+    float: left;
+}
+
+.percent70 {
+    width: 70%;
+    float: left;
+}
+
+.percent30 {
+    width: 30%;
+    float: left;
+}
+
+.clearBoth {
+    clear: both;
+}
+
+.stats-item {
+    width: 100%;
+    background-color: #131f31;
+    color: #fff;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    min-height: 125px;
+}
+
+    .stats-item .stats-item-header {
+        padding: 10px;
+    }
+
+.banner {
+    width: 100%;
+    background-color: #131f31;
+    margin-bottom: 20px;
+    height: 220px;
+}
+
+    .banner img {
+        height: 200px;
+        margin: 0 auto;
+    }

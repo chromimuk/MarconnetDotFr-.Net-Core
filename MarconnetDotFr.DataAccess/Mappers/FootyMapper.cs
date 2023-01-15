@@ -1,5 +1,6 @@
 ﻿using MarconnetDotFr.Core.Models;
 using MarconnetDotFr.Core.Models.FootyStats;
+using MarconnetDotFr.Core.Models.FootyStats.WorldCup;
 using MarconnetDotFr.DataAccess.DAO.Interfaces;
 
 namespace MarconnetDotFr.DataAccess.Mappers
@@ -18,6 +19,31 @@ namespace MarconnetDotFr.DataAccess.Mappers
                 coupedelaligue = ToCupPerformance(dao.GetCoupeDeLaLigue()),
                 europe = dao.GetEurope(),
                 notes = dao.GetNotes()
+            };
+        }
+
+        public static WorldCupGame ToWorldCupGame(IWorldCupGameDao dao)
+        {
+            Team teamA = new Team() { Name = dao.GetTeamA() };
+            Team teamB = new Team() { Name = dao.GetTeamB() };
+            int[] scores = ToScore(dao.GetScore());
+
+            return new WorldCupGame()
+            {
+                Group = new WorldCupGroup() { Name = dao.GetGroup() },
+                TeamA = teamA,
+                TeamB = teamB,
+                Result = new GameResult(teamA, teamB, scores[0], scores[1])
+            };
+        }
+
+        private static int[] ToScore(string score)
+        {
+            string[] results = score.Split(":");
+            return new int[]
+            {
+                int.Parse(results[0]),
+                int.Parse(results[1])
             };
         }
 
