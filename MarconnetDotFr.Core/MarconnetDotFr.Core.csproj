@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="LastFM.AspNetCore.Stats" Version="0.3.0" />
   </ItemGroup>
 
   <ItemGroup>
