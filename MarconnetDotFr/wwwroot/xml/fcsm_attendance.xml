@@ -3,6 +3,24 @@
   <seasons>
 
     <season>
+      <description>2023/2024</description>
+      <division>D3</division>
+      <ranking>8</ranking>
+      <attendance>10561</attendance>
+      <coupedefrance>1/8f</coupedefrance>
+      <coupedelaligue></coupedelaligue>
+      <europe></europe>
+    </season>
+    <season>
+      <description>2022/2023</description>
+      <division>D2</division>
+      <ranking>9</ranking>
+      <attendance>12000</attendance>
+      <coupedefrance>1/32f</coupedefrance>
+      <coupedelaligue></coupedelaligue>
+      <europe></europe>
+    </season>
+    <season>
       <description>2021/2022</description>
       <division>D2</division>
       <ranking>5</ranking>
@@ -715,8 +733,8 @@
     </season>
     <season>
       <description>1939/1940</description>
-      <division></division>
-      <ranking>?</ranking>
+      <division>D1</division>
+      <ranking>6</ranking>
       <attendance>0</attendance>
       <coupedefrance>1/4f</coupedefrance>
       <coupedelaligue></coupedelaligue>

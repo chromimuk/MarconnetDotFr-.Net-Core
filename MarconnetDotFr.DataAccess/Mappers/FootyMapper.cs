@@ -1,6 +1,7 @@
 ﻿using MarconnetDotFr.Core.Models;
 using MarconnetDotFr.Core.Models.FootyStats;
 using MarconnetDotFr.DataAccess.DAO.Interfaces;
+using System;
 
 namespace MarconnetDotFr.DataAccess.Mappers
 {
@@ -23,7 +24,21 @@ namespace MarconnetDotFr.DataAccess.Mappers
 
         private static Division ToDivision(string strDivision)
         {
-            return strDivision.Contains("D1") ? Division.D1 : Division.D2;
+            switch(strDivision)
+            {
+                case "D1":
+                case "D1-N":
+                case "D1-B":
+                    return Division.D1;        
+                case "D2":
+                case "D2-A":
+                case "D2-FrancheComte":
+                    return Division.D2;    
+                case "D3":
+                    return Division.D3;
+                default:
+                    throw new ArgumentException(strDivision);
+            }
         }
 
         private static CupPerformance ToCupPerformance(string strCupPerformance)

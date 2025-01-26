@@ -80,6 +80,7 @@ namespace MarconnetDotFr.Pages
             IList<DivisionCountModel> divisionCount = new List<DivisionCountModel>();
             divisionCount.Add(item: new DivisionCountModel() { division = Division.D1, count = seasons.Count(x => x.division == Division.D1) });
             divisionCount.Add(item: new DivisionCountModel() { division = Division.D2, count = seasons.Count(x => x.division == Division.D2) });
+            divisionCount.Add(item: new DivisionCountModel() { division = Division.D3, count = seasons.Count(x => x.division == Division.D3) });
 
             return new JsonResult(divisionCount);
         }

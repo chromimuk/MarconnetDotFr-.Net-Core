@@ -95,7 +95,7 @@
                 @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.SeasonModel>()
                     .Name("Ranking")
                     .Title("FCSM - Classement en championnat")
-                    .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
+                    .DataSource(ds => ds.Read(r => r.Url("/FCSMStats?handler=Read").Data("forgeryToken")))
                     .Series(series => {
                         series.Line(model => model.rankingForChart).CategoryField("season").Color("#133478").Axis("rankingForChart").MissingValues(ChartSeriesMissingValues.Gap);
                     })
@@ -104,7 +104,13 @@
                         .Labels(l => l.Step(10))
                         .Justify(true)
                     )
-                    .ValueAxis(axis => axis.Numeric("rankingForChart").Min(00).Max(41).Visible(false).PlotBands(b => b.Add().From(0).To(20).Color("#f5f5f5").Opacity(0.8)))
+                    .ValueAxis(axis => axis
+                        .Numeric("rankingForChart")
+                        .Min(00)
+                        .Max(101)
+                        .Visible(false)
+                        .PlotBands(b => b.Add().From(0).To(20).Color("#f5f5f5").Opacity(0.8))
+                    )
                     .Tooltip(tooltip => tooltip.Visible(true).Template("#= dataItem.strDivision # - #= dataItem.ranking #"))
                 )
             </div>
@@ -113,8 +119,8 @@
 
                 @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.DivisionCountModel>()
                 .Name("Division")
-                .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=ReadDivision").Data("forgeryToken")))
-                .SeriesColors(new string[] { "#133478", "#fad84a" })
+                .DataSource(ds => ds.Read(r => r.Url("/FCSMStats?handler=ReadDivision").Data("forgeryToken")))
+                    .SeriesColors(new string[] { "#133478", "#fad84a", "#f5f5f5" })
                 .Series(series =>  {
                     series.Pie(model => model.count, model => model.strDivision)
                     .Labels(labels => labels
@@ -127,12 +133,6 @@
 
             </div>
 
-        </div>
-
-        <div class="clearBoth"></div>
-
-        <div class="stats-item-header">
-            <p>La partie blanche du graphique représente la première division, celle en grise la deuxième division.</p>
         </div>
 
     </div>
@@ -153,7 +153,7 @@
                 @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.SeasonModel>()
                     .Name("CoupeDeFrance")
                     .Title("FCSM - Performances en Coupe de France")
-                    .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
+                    .DataSource(ds => ds.Read(r => r.Url("/FCSMStats?handler=Read").Data("forgeryToken")))
                     .Series(series => {
                         series.Line(model => model.coupeDeFranceForChart).CategoryField("season").Color("#133478").Axis("coupeDeFranceForChart").MissingValues(ChartSeriesMissingValues.Gap);
                     })
@@ -232,7 +232,7 @@
             @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.SeasonModel>()
             .Name("Attendance")
             .Title("FCSM - Affluence")
-            .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
+                .DataSource(ds => ds.Read(r => r.Url("/FCSMStats?handler=Read").Data("forgeryToken")))
             .Series(series => {
                 series.Area(model => model.attendance).Name("Affluence moyenne").CategoryField("season").Color("#007eff").Axis("season")
                     .NoteTextField("notes")
@@ -261,7 +261,7 @@
             @(Html.Kendo().Chart<MarconnetDotFr.Core.Models.FootyStats.SeasonModel>()
             .Name("RankingAndAttendance")
             .Title("FCSM - Classement et affluence")
-            .DataSource(ds => ds.Read(r => r.Url("/FootyStats?handler=Read").Data("forgeryToken")))
+                .DataSource(ds => ds.Read(r => r.Url("/FCSMStats?handler=Read").Data("forgeryToken")))
             .Series(series => {
                 series.Area(model => model.attendance).Name("Affluence moyenne").CategoryField("season").Color("#007eff").Axis("season");
                 series.Line(model => model.rankingForChart).Name("Classement").CategoryField("season").Color("#133478").Axis("rankingForChart").MissingValues(ChartSeriesMissingValues.Gap);
@@ -272,7 +272,7 @@
                 .Justify(true)
             )
             .ValueAxis(axis => axis.Numeric("season").Labels(l => l.Step(1)))
-            .ValueAxis(axis => axis.Numeric("rankingForChart").Color("#73c100").Min(00).Max(41).Visible(false).PlotBands(b => b.Add().From(0).To(20).Color("#f5f5f5").Opacity(0.8)))
+            .ValueAxis(axis => axis.Numeric("rankingForChart").Color("#73c100").Min(00).Max(101).Visible(false).PlotBands(b => b.Add().From(0).To(20).Color("#f5f5f5").Opacity(0.8)))
             .Tooltip(tooltip => tooltip.Visible(true).Template("#= dataItem.strDivision # - #= dataItem.ranking #"))
         )
         </div>

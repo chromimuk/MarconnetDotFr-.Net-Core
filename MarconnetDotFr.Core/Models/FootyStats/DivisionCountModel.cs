@@ -10,6 +10,6 @@ namespace MarconnetDotFr.Core.Models.FootyStats
 
         public int count { get; set; }
 
-        public string strDivision => division == Division.D1 ? "D1" : "D2";
+        public string strDivision => division.ToString();
     }
 }

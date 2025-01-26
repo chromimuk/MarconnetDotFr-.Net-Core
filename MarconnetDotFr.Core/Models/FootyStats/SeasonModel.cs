@@ -17,7 +17,7 @@ namespace MarconnetDotFr.Core.Models.FootyStats
         public int? rankingForChart => CalculateAllDivisionRanking();
         public int? coupeDeFranceForChart => CalculateCupRanking(coupedefrance);
         public int? coupeDeLaLigueForChart => CalculateCupRanking(coupedelaligue);
-        public string strDivision => division == Division.D1 ? "D1" : "D2";
+        public string strDivision => division.ToString();
         public string strCoupeDeFrance => ToStrCupPerformance(coupedefrance);
         public string strCoupeDeLaLigue => ToStrCupPerformance(coupedelaligue);
         #endregion ComputedProperties
@@ -26,9 +26,13 @@ namespace MarconnetDotFr.Core.Models.FootyStats
         {
             // basically reverse the ranking (1 becomes the highest, 20 the lowest) and add 20 if in first division 
 
-            var rank = 21 - ranking;
+            var rank = 41 - ranking;
 
             if (division == Division.D1)
+            {
+                rank += 40;
+            }
+            else if (division == Division.D2)
             {
                 rank += 20;
             }
@@ -74,7 +78,8 @@ namespace MarconnetDotFr.Core.Models.FootyStats
     public enum Division
     {
         D1,
-        D2
+        D2,
+        D3
     }
 
     public enum CupPerformance
